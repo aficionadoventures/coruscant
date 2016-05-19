@@ -21,3 +21,4 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 accounts-password
 twbs:bootstrap@=4.0.0-alpha.2
+iron:router
