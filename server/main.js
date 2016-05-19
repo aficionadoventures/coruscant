@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
+import { Vendors } from '../imports/api/userdata.js';
 
-Meteor.startup(() => {
-  // code to run on server at startup
+Meteor.startup(function() {
+    console.log('Server started up');
 });
+
