@@ -1,0 +1,28 @@
+<template name = "home">
+</template>
+
+<template name = "upload">
+  <h2>Upload Document</h2>
+ <!--  <form class="upload-document">
+    <p>Upload image<input type="file" accept="image/*" /></p>
+    <p>Upload pdf document<input type="file" accept=".pdf"/></p>
+    <input type="submit" value="Submit" />
+  </form> -->
+</template>
+
+<template name = "register">
+  <h2>Register</h2>
+  <form class="email-input">
+    <input type="text" name="name" placeholder="Enter name" />
+    <input type="email" name="email" placeholder="Enter email address" />
+    <input type="submit" value="Submit" />
+  </form>
+</template>
+
+<template name = "main">
+    <h1>Aficionado Ventures</h1>
+    {{> yield}}
+    <hr />
+    <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
+</template>
+
