@@ -26,3 +26,5 @@ Template.body.events({
         event.target.email.value= '';
     },
 });
+
+
