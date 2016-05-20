@@ -1,7 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Vendors } from '../imports/api/userdata.js';
 
-Meteor.startup(function() {
-    console.log('Server started up');
-});
+import { Vendors } from '../imports/api/userdata.js';
+import '../imports/route/route.js';
 
