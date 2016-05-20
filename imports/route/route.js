@@ -1,6 +1,3 @@
-// import '../imports/ui/body.html';
-
-
 Router.route('/', function () {
   this.render('home');
 });
@@ -16,3 +13,4 @@ Router.route('/upload', function () {
 Router.configure({
     layoutTemplate: 'main'
 });
+
