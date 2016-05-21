@@ -1,20 +1,20 @@
 Router.route('/', function () {
-  this.render('home');
-  name: 'home'
+	this.render('home');
+	name: 'home'
 });
 
 Router.route('/register', function () {
-  this.render('register');
-  name: 'register'
+	this.render('register');
+	name: 'register'
 });
 
 Router.route('/upload', function () {
-  this.render('upload');
-  name: 'upload'
+	this.render('upload');
+	name: 'upload'
 });
 
 Router.configure({
-    layoutTemplate: 'main'
+	layoutTemplate: 'main'
 },{
 	name: 'main'
 });
