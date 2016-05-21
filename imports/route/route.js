@@ -1,19 +1,24 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Router.route('/', function () {
-  this.render('home');
+	this.render('home');
+	name: 'home'
 });
 
 Router.route('/register', function () {
-  this.render('register');
+	this.render('register');
+	name: 'register'
 });
 
 Router.route('/upload', function () {
-  this.render('upload');
+	this.render('upload');
+	name: 'upload'
 });
 
 Router.configure({
-    layoutTemplate: 'main'
+	layoutTemplate: 'main'
+},{
+	name: 'main'
 });
 
 Router.route('/verify-email/:token', function() {
