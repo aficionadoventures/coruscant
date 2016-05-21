@@ -4,7 +4,7 @@ import { Template } from 'meteor/templating';
 import { Vendors } from '../api/userdata.js';
 
 Template.register.onCreated(function bodyOnCreated() {
-    console.log('Body created')
+    console.log('register created')
 });
 
 Template.register.events({
@@ -30,13 +30,13 @@ Template.register.events({
 
 Template.upload.events({
     'change input' : function(event,template){ 
-    var file = event.target.files[0]; //assuming 1 file only
+    const file = event.target.files[0]; //assuming 1 file only
     if (!file) return;
 
-    var reader = new FileReader(); //create a reader according to HTML5 File API
+    const reader = new FileReader(); //create a reader according to HTML5 File API
 
     reader.onload = function(event){          
-        var buffer = new Uint8Array(reader.result) // convert to binary
+        const buffer = new Uint8Array(reader.result) // convert to binary
         Meteor.call('saveFile', buffer);
     }
 
