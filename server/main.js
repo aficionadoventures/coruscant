@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
 import { Vendors } from '../imports/api/userdata.js';
 import '../imports/route/route.js';
+import '../imports/api/userdata.js';
 import './email_verification.js'
 
 Meteor.startup(function () {
@@ -13,6 +14,4 @@ Meteor.methods({
         Files.insert({data:buffer})         
     }   
 });
-
-
 

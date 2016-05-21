@@ -7,29 +7,8 @@ Template.register.onCreated(function bodyOnCreated() {
     console.log('register created')
 });
 
-Template.register.events({
-    'submit .email-input' : function(event) {
-        event.preventDefault();
-        const name = event.target.name.value;
-        const email = event.target.email.valuel
-        console.log({
-            name,
-            email,
-        });
-        Vendors.insert({
-            name,
-            email,
-            createdAt: new Date(),
-        });
-        console.log(Vendors.find());
-        event.target.name.value = '';
-        event.target.email.value= '';
-    },
-});
-
-
 Template.upload.events({
-    'change input' : function(event,template){ 
+    'change input' : function(event, template){ 
     const file = event.target.files[0]; //assuming 1 file only
     if (!file) return;
 
