@@ -1,4 +1,12 @@
+<template name="main">
+    <h1>Aficionado Ventures</h1>
+      {{> yield}}
+    <hr />
+    <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
+</template>
+
 <template name="home">
+  {{> navigation}}
 </template>
 
 <template name="upload">
@@ -19,10 +27,10 @@
   </form>
 </template>
 
-<template name="main">
-    <h1>Aficionado Ventures</h1>
-    {{> yield}}
-    <hr />
-    <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
+<template name="navigation">
+  <ul>
+    <li><a href="{{pathFor route='register'}}">Register</a></li>
+  </ul>
 </template>
+
 
