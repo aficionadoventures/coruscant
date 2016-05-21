@@ -21,6 +21,10 @@ Router.configure({
 	name: 'main'
 });
 
+Router.configure({
+    notFoundTemplate: 'notFound'
+});
+
 Router.route('/verify-email/:token', function() {
     let token = this.params.token;
     console.log(token);
