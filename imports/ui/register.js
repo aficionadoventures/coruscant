@@ -24,11 +24,12 @@ Template.register.events({
                         console.log('Error in sendVerificationLink');
                     } else {
                         console.log('No error in sendVerificationLink');
-                        Router.go('/');
                     }
                 });
             }
         });
+
+        Meteor.call('sendOTP', template.find('[name="phone"]').value, 112358);
     },
 });
 
