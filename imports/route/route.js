@@ -25,6 +25,18 @@ Router.configure({
     notFoundTemplate: 'notFound'
 });
 
+Router.route('/reset', function () {
+    this.render('reset-password');
+    name: 'reset'
+});
+
+Router.route('/forgot', function () {
+    this.render('forgot-password');
+    name: 'forgot'
+});
+
+
+
 Router.route('/verify-email/:token', function() {
     let token = this.params.token;
     console.log(token);
@@ -36,4 +48,5 @@ Router.route('/verify-email/:token', function() {
         }
     });
 });
+
 
