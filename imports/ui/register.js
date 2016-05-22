@@ -11,6 +11,7 @@ Template.register.events({
         let user = {
             email : template.find('[name="email"]').value,
             password : template.find('[name="password"]').value,
+            phone : template.find('[name="phone"]').value,
         }
 
         Accounts.createUser(user, (error) => {
