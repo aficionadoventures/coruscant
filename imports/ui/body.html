@@ -14,8 +14,7 @@
 <template name="upload">
   <h2>Upload Document</h2>
   <form class="upload-document">
-    <p> <input type="text" name="phone" placeholder="Enter phone number" required/>
-
+    <p> <input type="text" name="phone" placeholder="Enter phone number" required/></p>
     <p><input type="file" accept="image/*" />Upload image</p>
     <p><input type="file" accept=".pdf"/>Upload pdf document</p>
     <p><input type="file" accept=".doc, docx">Upload word document</p>
@@ -31,11 +30,12 @@
     <input type="text" name="phone" placeholder="Enter phone number" required/>
     <input type="submit" value="Submit" />
   </form>
+  <a href="{{pathFor route='phoneVerifRoute'}}">Enter OTP</a>
   <a href="{{pathFor route='reset'}}">Reset Password</a>
   <a href="{{pathFor route='forgot'}}">Forgot Password</a>
 </template>
 
-<template name="forgot-password">
+<template name="forgotPass">
   <h2>Forgot Password</h2>
   <form class="forgot-password">
     <input type="email" name="email" placeholder="Enter email address" required/>
@@ -44,7 +44,7 @@
   </form>
 </template>
 
-<template name="reset-password">
+<template name="resetPass">
   <h2>Reset Password</h2>
   <form class="email-input">
     <input type="password" name="password" placeholder="Enter old password" required/>
@@ -60,10 +60,10 @@
   </ul>
 </template>
 
-<template name="phone-verification">
+<template name="phoneVerif">
   <h3>Phone Verification</h3>
   <form class="phone-input">
-    <input type="number" name="OTP" placeholder="Enter OTP" required/>
+    <input type="number" name="inputOtp" placeholder="Enter OTP" required/>
     <input type="submit" value="Submit" />
   </form>
 </template>

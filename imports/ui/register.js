@@ -33,3 +33,11 @@ Template.register.events({
     },
 });
 
+Template.phoneVerif.events({
+    'submit form' : function(event, template) {
+        event.preventDefault();
+
+        let inputOTP = template.find('[name="inputOtp"]').value;
+        Meteor.call('verifyOTP', Meteor.userId(), inputOTP);
+    },
+});

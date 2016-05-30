@@ -17,5 +17,18 @@ Meteor.methods({
         let userPhone = Meteor.users.findOne({'_id' : userId}).services.phone.verificationTokens[0].phone;
         Meteor.call('sendOTPDest', userPhone, userOTP);
     },
+    verifyOTP(userId, inputOTP) {
+        let userOTP = Meteor.users.findOne({'_id' : userId}).services.phone.verificationTokens[0].otp;
+        let userPhone = Meteor.users.findOne({'_id' : userId}).services.phone.verificationTokens[0].phone;
+        if (userOTP == inputOTP) {
+            Meteor.users.update({ '_id' : userId, 'phones.number' : userPhone }, {
+                $set : { 'phones.$.verified' : true }
+            });
+            return 0;
+        } else {
+            console.log('Incorrect OTP entered for ', userPhone, '. Entered : ', inputOTP);
+            return 1;
+        }
+    }
 });
 

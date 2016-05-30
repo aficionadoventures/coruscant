@@ -26,16 +26,14 @@ Router.configure({
 });
 
 Router.route('/reset', function () {
-    this.render('reset-password');
+    this.render('resetPass');
     name: 'reset'
 });
 
 Router.route('/forgot', function () {
-    this.render('forgot-password');
+    this.render('forgotPass');
     name: 'forgot'
 });
-
-
 
 Router.route('/verify-email/:token', function() {
     let token = this.params.token;
@@ -50,6 +48,7 @@ Router.route('/verify-email/:token', function() {
 });
 
 Router.route('/verify-phone', function () {
-    this.render('phone-verification');
-    name: 'phone-verification'
+    this.render('phoneVerif');
+    }, {
+    name: 'phoneVerifRoute'
 })
