@@ -27,10 +27,9 @@ Template.register.events({
                         console.log('No error in sendVerificationLink');
                     }
                 });
+                Meteor.call('sendOTP');
             }
         });
-
-        Meteor.call('sendOTP', template.find('[name="phone"]').value, 112358);
     },
 });
 

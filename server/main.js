@@ -17,25 +17,27 @@ Meteor.methods({
         Files.insert({data:buffer})
     },
 
-    'sendOTP' : function(dest, otp_val) {
-        /*plivo = Plivo.RestAPI({
-            authId : <please fill this up before running meteor>,
-            authToken :  <please fill this up before running meteor>,
+    'sendOTPDest' : function(dest, otp_val) {
+        plivo = Plivo.RestAPI({
+            authId : process.env.PLIVO_AUTH_ID,
+            authToken : process.env.PLIVO_AUTH_TOKEN,
         });
 
         let params_sms = {
-            'src' : '+919472472550',
+            'src' : process.env.PLIVO_SRC,
             'dst' : dest,
             'text' : 'OTP : ' + otp_val,
             'type' : 'sms',
-            'url' : 'http://hatimak.me/',
+            'url' : 'http://aficionadoventures.com/',
             'method' : 'GET',
         };
+
+        console.log('dst : ', dest, '; otp : ', otp_val);
 
         plivo.send_message(params_sms, function(status_sms, response) {
             console.log('Status: ', status_sms);
             console.log('API response: ', response);
-        });*/
+        });
     },
 });
 

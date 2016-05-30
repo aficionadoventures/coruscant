@@ -10,6 +10,12 @@ Meteor.methods({
         if (userId) {
             return Accounts.sendVerificationEmail(userId);
         }
-    }
+    },
+    sendOTP() {
+        let userId = Meteor.userId();
+        let userOTP = Meteor.users.findOne({'_id' : userId}).services.phone.verificationTokens[0].otp;
+        let userPhone = Meteor.users.findOne({'_id' : userId}).services.phone.verificationTokens[0].phone;
+        Meteor.call('sendOTPDest', userPhone, userOTP);
+    },
 });
 
