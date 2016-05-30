@@ -14,6 +14,8 @@
 <template name="upload">
   <h2>Upload Document</h2>
   <form class="upload-document">
+    <p> <input type="text" name="phone" placeholder="Enter phone number" required/>
+
     <p><input type="file" accept="image/*" />Upload image</p>
     <p><input type="file" accept=".pdf"/>Upload pdf document</p>
     <p><input type="file" accept=".doc, docx">Upload word document</p>
@@ -24,20 +26,20 @@
 <template name="register">
   <h2>Register</h2>
   <form class="email-input">
-    <input type="email" name="email" placeholder="Enter email address" />
-    <input type="password" name="password" placeholder="Enter password" />
-    <input type="text" name="phone" placeholder="Enter phone number" />
+    <input type="email" name="email" placeholder="Enter email address" required/>
+    <input type="password" name="password" placeholder="Enter password" required/>
+    <input type="text" name="phone" placeholder="Enter phone number" required/>
     <input type="submit" value="Submit" />
   </form>
-  <button>Reset Password</button>
-  <button>Forgot Password</button>
+  <a href="{{pathFor route='reset'}}">Reset Password</a>
+  <a href="{{pathFor route='forgot'}}">Forgot Password</a>
 </template>
 
 <template name="forgot-password">
   <h2>Forgot Password</h2>
   <form class="forgot-password">
-    <input type="email" name="email" placeholder="Enter email address" />
-    <input type="text" name="phone" placeholder="Enter phone number" />
+    <input type="email" name="email" placeholder="Enter email address" required/>
+    <input type="text" name="phone" placeholder="Enter phone number" required/>
     <input type="submit" value="Submit" />
   </form>
 </template>
@@ -45,13 +47,12 @@
 <template name="reset-password">
   <h2>Reset Password</h2>
   <form class="email-input">
-    <input type="password" name="password" placeholder="Enter old password" />
-    <input type="password" name="password" placeholder="Enter new password" />
-    <input type="password" name="password" placeholder="Renter new password" />
+    <input type="password" name="password" placeholder="Enter old password" required/>
+    <input type="password" name="password" placeholder="Enter new password" required/>
+    <input type="password" name="password" placeholder="Renter new password" required/>
     <input type="submit" value="Submit" />
   </form>
 </template>
-
 
 <template name="navigation">
   <ul>
@@ -59,10 +60,18 @@
   </ul>
 </template>
 
+<template name="phone-verification">
+  <h3>Phone Verification</h3>
+  <form class="phone-input">
+    <input type="number" name="OTP" placeholder="Enter OTP" required/>
+    <input type="submit" value="Submit" />
+  </form>
+</template>
+
 <template name="notFound">
   <h3>Error 404</h3>
   <p>Sorry, that page doesn't exist</p>
-  <button><a href="/">GO TO HOME</a></button>
+  <a href="/">GO TO HOME</a>
 </template>
 
 

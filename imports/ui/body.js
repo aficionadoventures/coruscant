@@ -1,4 +1,4 @@
-import './body.html'
+import './body.html';
 
 import { Template } from 'meteor/templating';
 import { Vendors } from '../api/userdata.js';

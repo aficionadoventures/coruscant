@@ -49,4 +49,7 @@ Router.route('/verify-email/:token', function() {
     });
 });
 
-
+Router.route('/verify-phone', function () {
+    this.render('phone-verification');
+    name: 'phone-verification'
+})
