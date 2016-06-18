@@ -24,29 +24,11 @@ Template.upload.events({
     },
 });
 
-Template.search.onCreated( () => {
-  let template = Template.instance();
-
-  template.searchQuery = new ReactiveVar();
-  template.searching   = new ReactiveVar( false );
-
-  template.autorun( () => {
-    template.subscribe( 'products_search', template.searchQuery.get(), () => {
-      setTimeout( () => {
-        template.searching.set( false );
-      }, 300 );
-    });
-  });
-});
-
 Template.search.onCreated(function() {
     let template = Template.instance();
     // template.results = [{name : 'dum', category : 'dum', grade : 'duma', price : 'dum'}];
     template.results = new ReactiveVar([]);
     template.search_done = new ReactiveVar(false);
-    template.autorun(function() {
-
-    }, 300);
 });
 
 Template.search.helpers({
