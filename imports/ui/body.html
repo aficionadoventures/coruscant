@@ -160,11 +160,21 @@
   {{> newProduct}}
   <section class="products">
     {{#each products}}
-      {{name}}
+      {{> productView}}
     {{/each}}
   </section>
 </template>
 
 <template name="newProduct">
 {{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
+</template>
+
+<template name="productView">
+  <article class="productViewArticle">
+    <h3>{{name}}</h3>
+    <p>{{category}}</p>
+    <p>{{grade}}</p>
+    <p>{{size}}</p>
+    <p>{{age}}</p>
+  </article>
 </template>
