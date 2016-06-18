@@ -68,3 +68,10 @@ Router.route('/verify-phone', function () {
     }, {
     name: 'phoneVerifRoute'
 })
+
+Router.route('/marketplace', function () {
+    this.render('marketplace');
+    }, {
+    name: 'marketplace'
+})
+

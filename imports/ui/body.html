@@ -110,3 +110,16 @@
   <p>Sorry, that page doesn't exist</p>
   <a href="/">GO TO HOME</a>
 </template>
+
+<template name="marketplace">
+  {{> newProduct}}
+  <section class="products">
+    {{#each products}}
+      {{name}}
+    {{/each}}
+  </section>
+</template>
+
+<template name="newProduct">
+{{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
+</template>
