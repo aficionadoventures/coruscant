@@ -1,6 +1,8 @@
 <template name="main">
     <h1>Aficionado Ventures</h1>
-      {{> yield}}
+    {{> navigation}}
+    <hr />
+    {{> yield}}
     <hr />
     <footer>
       <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
@@ -8,7 +10,6 @@
 </template>
 
 <template name="home">
-  {{> navigation}}
 </template>
 
 <template name="upload">
@@ -84,6 +85,50 @@
   {{/if}}
 </template>
 
+<template name="search">
+  <br>
+  {{#if currentUser}}
+    <h2>Hello {{email_address}}! What would you like to search today?</h2>
+  {{else}}
+    <h2>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h2>
+  {{/if}}
+
+  <form class="search_input">
+    <input type="text" name="name_query" placeholder="Enter name">
+    <input type="submit" value="Submit" />
+
+    {{#if search_complete}}
+      <ul>
+      {{#each result in results}}
+      <li>
+        {{#with result}}
+        <span>name = {{name}}</span>
+        <span>category = {{category}}</span>
+        <span>grade = {{grade}}</span>
+        <span>price = {{price}}</span>
+        {{/with}}
+        </li>
+      {{/each}}
+      </ul>
+    {{/if}}
+
+  </form>
+
+  <!-- {{> DynamicTemplate template=getResults data=getData}} -->
+</template>
+
+<!-- <template name="search_results">
+  <ul>
+    {{#each result in results}}
+      <li>
+        <p>name={{result.name}}; category={{result.category}}; price={{result.price}}; grade={{result.grade}}</p>
+      </li>
+    {{else}}
+      <li><p>No matching records found</p></li>
+    {{/each}}
+  </ul>
+</template>
+ -->
 <template name="login">
   <h2>login</h2>
   <form class="login-input">

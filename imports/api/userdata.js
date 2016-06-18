@@ -1,5 +1,7 @@
 Products = new Mongo.Collection('products');
 
+export { Products };
+
 Products.allow({
 	insert: function(userId, doc) {
 		return !!userId;
@@ -70,4 +72,3 @@ ProductSchema = new SimpleSchema({
 });
 
 Products.attachSchema(ProductSchema);
-

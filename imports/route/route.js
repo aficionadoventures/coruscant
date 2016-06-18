@@ -17,6 +17,12 @@ Router.route('/login', function () {
     name: 'login'
 });
 
+Router.route('/search', function () {
+    this.render('search');
+}, {
+    name: 'search'
+});
+
 Router.route('/dashboard', function () {
     this.render('dashboard');
 }, {

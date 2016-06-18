@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Plivo } from 'meteor/pfafman:plivo';
-import { Vendors } from '../imports/api/userdata.js';
 import { Accounts } from 'meteor/accounts-base';
 import { Random } from 'meteor/random';
+import { Products } from '../imports/api/userdata.js'
 
 import '../imports/route/route.js';
 import '../imports/api/userdata.js';
@@ -11,6 +11,7 @@ import './publish.js';
 
 Meteor.startup(function () {
     console.log('Server starting up ...');
+    Products._ensureIndex({ name : 1});
 });
 
 Meteor.methods({
@@ -39,6 +40,19 @@ Meteor.methods({
             console.log('Status: ', status_sms);
             console.log('API response: ', response);
         });
+    },
+
+    'search_name' : function(name_query) {
+        results = [];
+        Products.find({ 'name' : name_query }).forEach(function(doc) {
+            results.push({
+                name : doc.name,
+                category : doc.category,
+                price : doc.price,
+                grade : doc.grade,
+            });
+        });
+        return results;
     },
 });
 
