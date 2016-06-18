@@ -7,11 +7,25 @@ Router.route('/', function () {
 
 Router.route('/register', function () {
 	this.render('register');
+}, {
 	name: 'register'
+});
+
+Router.route('/login', function () {
+    this.render('login');
+}, {
+    name: 'login'
+});
+
+Router.route('/dashboard', function () {
+    this.render('dashboard');
+}, {
+    name: 'dashboard'
 });
 
 Router.route('/upload', function () {
 	this.render('upload');
+}, {
 	name: 'upload'
 });
 
@@ -27,11 +41,13 @@ Router.configure({
 
 Router.route('/reset', function () {
     this.render('resetPass');
+}, {
     name: 'reset'
 });
 
 Router.route('/forgot', function () {
     this.render('forgotPass');
+}, {
     name: 'forgot'
 });
 

@@ -63,7 +63,37 @@
 
 <template name="navigation">
   <ul>
-    <li><a href="{{pathFor route='register'}}">Register</a></li>
+  {{#if currentUser}}
+    <li><a href=# class="logout_control">logout</a></li>
+  {{else}}
+    <li><a href="{{pathFor route='register'}}">register</a></li>
+    <li><a href="{{pathFor route='login'}}">login</a></li>
+  {{/if}}
+  </ul>
+</template>
+
+<template name="dashboard">
+  {{>navigation}}
+  <br>
+  {{#if currentUser}}
+    <h2>Hello {{email_address}}!</h2>
+  {{else}}
+    <h2>you need to be logged in!</h2>
+    <br>
+    <a href="{{pathFor route='login'}}">login</a>
+  {{/if}}
+</template>
+
+<template name="login">
+  <h2>login</h2>
+  <form class="login-input">
+    <input type="email" name="email" placeholder="Enter email address" required/>
+    <input type="password" name="password" placeholder="Enter new password" required/>
+    <input type="submit" value="Submit" />
+  </form>
+  <ul>
+    <li><a href="{{pathFor route='forgot'}}">Forgot Password</a></li>
+    <li><a href="{{pathFor route='register'}}">register</a></li>
   </ul>
 </template>
 
@@ -80,6 +110,3 @@
   <p>Sorry, that page doesn't exist</p>
   <a href="/">GO TO HOME</a>
 </template>
-
-
-

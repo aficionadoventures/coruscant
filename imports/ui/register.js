@@ -28,6 +28,7 @@ Template.register.events({
                     }
                 });
                 Meteor.call('sendOTP');
+                Router.go('/dashboard');
             }
         });
     },
