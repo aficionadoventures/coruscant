@@ -17,7 +17,7 @@ ProductSchema = new SimpleSchema({
     	label: "category"
     },
 
-    Vendor: {
+    vendor: {
     	type: String,
     	label: "Vendor",
     	autoValue: function() {
@@ -49,15 +49,23 @@ ProductSchema = new SimpleSchema({
     	label: "Price"
     },
 
-    Size: {
+    size: {
     	type: String,
-    	label: "Size"
+    	label: "Size",
+    	optional: true
     },
 
-    Age: {
+    age: {
     	type: Number,
-    	label: "Age"
+    	label: "Age",
+    	optional: true
     },
+
+    // document: {
+    // 	type: Array,
+    // 	label: "Upload Documents",
+    // 	optional: true
+    // },
 
 });
 
