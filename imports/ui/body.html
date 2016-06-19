@@ -46,39 +46,89 @@
 </template>
 
 <template name="register">
-
-<div class="container-fluid">
+<!--   <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
-    
-    <div class="col-sm-7 col-md-7" id="col-mid">
-      <div class="col-sm-2 col-md-2"></div>
-      <div class="col-sm-8 col-md-8">
-         <h2>Register</h2>
-    <form class="email-input">
-    <ul>
-      <li><input type="email" name="email" placeholder="Enter email address" required/></li>
-      <li><input type="password" name="password" placeholder="Enter password" required/></li>
-      <li><input type="text" name="phone" placeholder="Enter phone number" required/></li>
-      <li><input type="submit" value="Submit" /></li>
-    </ul>
-    </form>
-      </div>
-      <div class="col-sm-2 col-md-2"></div>      
-    </div>            
-    <div class="col-sm-3 col-md-3" id="col-right"></div>
+
+  <div class="col-sm-7 col-md-7" id="col-mid">
+    <div class="col-sm-2 col-md-2"></div>
+    <div class="col-sm-8 col-md-8">
+ -->  <h2>Register</h2>
+  <form class="email-input">
+  <ul>
+  <li><input type="text" name="name" placeholder="Enter name" required=""/></li>
+  <li><input type="email" name="email" placeholder="Enter email address" required=""/></li>
+  <li><input type="password" name="password" placeholder="Enter password" required=""/></li>
+  <li><select name="role">
+    <option value="horeca">HoReCa</option>
+    <option value="vendor">Vendor</option>
+  </select></li>
+  <li><input type="text" name="phone" placeholder="Enter phone number" required=""/></li>
+  <li><input type="text" name="city" placeholder="Enter city" required=""/></li>
+  <li><select name="state">
+    <option value="andhra_pradesh">Andhra Pradesh</option>
+    <option value="arunachal_pradesh">Arunachal Pradesh</option>
+    <option value="assam">Assam</option>
+    <option value="bihar">Bihar</option>
+    <option value="chhattisgarh">Chhattisgarh</option>
+    <option value="delhi_ncr">Delhi and NCR region</option>
+    <option value="goa">Goa</option>
+    <option value="gujarat">Gujarat</option>
+    <option value="haryana">Haryana</option>
+    <option value="himachal_pradesh">Himachal Pradesh</option>
+    <option value="jammu_kashmir">Jammu &amp; Kashmir</option>
+    <option value="jharkhand">Jharkhand</option>
+    <option value="karnataka">Karnataka</option>
+    <option value="kerala">Kerala</option>
+    <option value="madhya_pradesh">Madhya Pradesh</option>
+    <option value="maharashtra">Maharashtra</option>
+    <option value="manipur">Manipur</option>
+    <option value="meghalaya">Meghalaya</option>
+    <option value="mizoram">Mizoram</option>
+    <option value="nagaland">Nagaland</option>
+    <option value="odisha_">Odisha</option>
+    <option value="punjab">Punjab</option>
+    <option value="rajasthan">Rajasthan</option>
+    <option value="sikkim">Sikkim</option>
+    <option value="tamil_nadu">Tamil Nadu</option>
+    <option value="telangana_">Telangana</option>
+    <option value="tripura">Tripura</option>
+    <option value="uttar_pradesh">Uttar Pradesh</option>
+    <option value="uttarakhand">Uttarakhand</option>
+    <option value="west_bengal">West Bengal</option>
+  </select></li>
+  </ul>
+
+{{> Template.dynamic template=verification}}
+
+  <ul>
+  <li>{{error_first_step}}</li>
+  </ul>
+
+  <input type="submit" value="Submit" />
+  </form>
+<!--   </div>
+  <div class="col-sm-2 col-md-2"></div>      
+  </div>            
+  <div class="col-sm-3 col-md-3" id="col-right"></div>
   </div>
-</div>
-<!--   <a href="{{pathFor route='phoneVerifRoute'}}">Enter OTP</a> -->
-<!--   <a href="{{pathFor route='reset'}}">Reset Password</a>
+  </div> -->
+  <!--   <a href="{{pathFor route='phoneVerifRoute'}}">Enter OTP</a> -->
+  <!--   <a href="{{pathFor route='reset'}}">Reset Password</a>
 <a href="{{pathFor route='forgot'}}">Forgot Password</a> -->
+</template>
+
+<template name="verification">
+  <ul>
+  <li><input type="text" name="otp_value" placeholder="Enter OTP"></li>
+  </ul>
 </template>
 
 <template name="forgotPass">
   <h2>Forgot Password</h2>
   <form class="forgot-password">
-    <input type="email" name="email" placeholder="Enter email address" required/>
-    <input type="text" name="phone" placeholder="Enter phone number" required/>
+    <input type="email" name="email" placeholder="Enter email address" required="" />
+    <input type="text" name="phone" placeholder="Enter phone number" required="" />
     <input type="submit" value="Submit" />
   </form>
 </template>
@@ -86,9 +136,9 @@
 <template name="resetPass">
   <h2>Reset Password</h2>
   <form class="email-input">
-    <input type="password" name="password" placeholder="Enter old password" required/>
-    <input type="password" name="password" placeholder="Enter new password" required/>
-    <input type="password" name="password" placeholder="Renter new password" required/>
+    <input type="password" name="password" placeholder="Enter old password" required="" />
+    <input type="password" name="password" placeholder="Enter new password" required="" />
+    <input type="password" name="password" placeholder="Renter new password" required="" />
     <input type="submit" value="Submit" />
   </form>
 </template>
@@ -266,8 +316,8 @@
       <div class="col-sm-8 col-md-8">
         <h2>Login</h2>
   <form class="login-input">
-    <input type="email" name="email" placeholder="Enter email address" required/>
-    <input type="password" name="password" placeholder="Enter new password" required/>
+    <input type="email" name="email" placeholder="Enter email address" required="" />
+    <input type="password" name="password" placeholder="Enter new password" required="" />
     <input type="submit" value="Submit" />
   </form>
   <ul>
@@ -286,7 +336,7 @@
 <template name="phoneVerif">
   <h3>Phone Verification</h3>
   <form class="phone-input">
-    <input type="number" name="inputOtp" placeholder="Enter OTP" required/>
+    <input type="number" name="inputOtp" placeholder="Enter OTP" required="" />
     <input type="submit" value="Submit" />
   </form>
 </template>

@@ -11,7 +11,6 @@ import './publish.js';
 
 Meteor.startup(function () {
     console.log('Server starting up ...');
-    Products._ensureIndex({ name : 1});
 });
 
 Meteor.methods({
@@ -86,6 +85,7 @@ Meteor.methods({
 });
 
 Accounts.onCreateUser(function(options, user) {
+    user.name = options.name;
     user.phones = [
         { number : options.phone, verified : false}
     ];
@@ -94,6 +94,12 @@ Accounts.onCreateUser(function(options, user) {
             { otp : Math.floor((Random.fraction() * 1000000)), phone : options.phone, when : new Date() },
         ],
     };
+    user.role = options.role;
+    user.location = {
+        city : options.city,
+        state : options.state,
+    };
+    console.log('New user : ' + options);
     // Default hook's "profile" behaviour.
     if (options.profile) {
         user.profile = options.profile;
