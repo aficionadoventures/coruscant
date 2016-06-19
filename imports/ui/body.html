@@ -95,7 +95,22 @@
 
   <form class="search_input">
     <input type="text" name="name_query" placeholder="Enter name">
-    <input type="submit" value="Submit" />
+
+<p> sort by:
+    <select id="sort_param">
+      <option value=size>size</option>
+      <option value=price>price</option>
+      <option value=age>age</option>
+    </select>
+</p>
+<p> order
+    <select id="order">
+      <option value=ascending>ascending</option>
+      <option value=descending>descending</option>
+    </select>
+</p>
+
+<input type="submit" value="Submit" />
 
     {{#if search_complete}}
       <ul>
@@ -106,6 +121,8 @@
         <span>category = {{category}}</span>
         <span>grade = {{grade}}</span>
         <span>price = {{price}}</span>
+        <span>age = {{age}}</span>
+        <span>size = {{size}}</span>
         {{/with}}
         </li>
       {{/each}}

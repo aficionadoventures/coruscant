@@ -42,14 +42,27 @@ Meteor.methods({
         });
     },
 
-    'search_name' : function(name_query) {
+    'search_name' : function(query) {
         results = [];
-        Products.find({ 'name' : name_query }).forEach(function(doc) {
+        Products.find({
+            // $or: [
+                $text: {
+                    $search: query.name,
+
+                },
+                // { category: name_query },
+                // { grade: name_query },
+            // ]
+        }, {
+            sort: query.sort
+        }).forEach(function(doc) {
             results.push({
                 name : doc.name,
                 category : doc.category,
                 price : doc.price,
                 grade : doc.grade,
+                size : doc.size,
+                age : doc.age
             });
         });
         return results;

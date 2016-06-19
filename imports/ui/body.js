@@ -51,7 +51,23 @@ Template.search.events({
         event.preventDefault();
 
         var name_query = template.find('[name="name_query"]').value;
-        Meteor.call('search_name', name_query, {returnStubValue: true}, (error, results) => {
+        var sort_param = template.find('[id="sort_param"]').value;
+        var order;
+        var sort_order = {};
+            if (template.find('[id="order"]').value === 'ascending') {
+                order = 1;
+            } else {
+                order = -1;
+            }
+            if (sort_param === 'size') {
+                sort_order = {size : order};
+            } else if (sort_param === 'price') {
+                sort_order = {price : order};
+            } if (sort_param === 'age') {
+                sort_order = {age : order}
+            }
+
+        Meteor.call('search_name', { name: name_query, sort : sort_order}, {returnStubValue: true}, (error, results) => {
             template.search_done.set(true);
             template.results.set(results);
         });
