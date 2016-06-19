@@ -1,5 +1,5 @@
 <template name="main">
-    <h1>Aficionado Ventures</h1>
+    
     {{> navigation}}
     <hr />
     {{> yield}}
@@ -10,6 +10,21 @@
 </template>
 
 <template name="home">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+
 </template>
 
 <template name="upload">
@@ -31,7 +46,7 @@
 </template>
 
 <template name="register">
-  <h2>Register</h2>
+ <h2>Register</h2>
   <form class="email-input">
     <input type="email" name="email" placeholder="Enter email address" required/>
     <input type="password" name="password" placeholder="Enter password" required/>
@@ -39,8 +54,8 @@
     <input type="submit" value="Submit" />
   </form>
   <a href="{{pathFor route='phoneVerifRoute'}}">Enter OTP</a>
-  <a href="{{pathFor route='reset'}}">Reset Password</a>
-  <a href="{{pathFor route='forgot'}}">Forgot Password</a>
+<!--   <a href="{{pathFor route='reset'}}">Reset Password</a>
+<a href="{{pathFor route='forgot'}}">Forgot Password</a> -->
 </template>
 
 <template name="forgotPass">
@@ -63,18 +78,54 @@
 </template>
 
 <template name="navigation">
-  <ul>
   {{#if currentUser}}
-    <li><a href=# class="logout_control">logout</a></li>
+    <div class="jumbotron jumbotron-head">
+      <span style="float: left;">Aficionado</span> 
+      <span style="float: right;">
+        <ul>
+          <li style="display: inline;"><a href="{{pathFor route='search'}}">Search&emsp;</a></li>
+          <li style="display: inline;"><a href=# class="logout_control">logout &emsp;</a></li>
+          <span class="glyphicon glyphicon-user"></span>
+        </ul>
+      </span>      
+    </div>
+    <div class="jumbotron jumbotron-head2">
+      <span style="float: left; margin: 0px;">Get Going!</span> 
+        <span style="float: right; margin: 0px;">
+          <button type="button" class="btn btn-default btn-lg">Notification <span class="badge">2</span></button>
+      </span>
+    </div>
   {{else}}
-    <li><a href="{{pathFor route='register'}}">register</a></li>
-    <li><a href="{{pathFor route='login'}}">login</a></li>
+    <div class="jumbotron jumbotron-head">
+      <span style="float: left;">Aficionado</span> 
+      <span style="float: right;">
+        <ul class="menu">
+          <li style="display: inline;"><a href="{{pathFor route='search'}}">Search&emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='register'}}">Register&emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='login'}}">Login&emsp;</a></li>
+        </ul>
+      <span class="glyphicon glyphicon-user"></span>
+      </span>
+    </div>
+    <div class="jumbotron jumbotron-head2">
+      <span style="float: left; margin: 0px;">Making Restaurant Scalable!</span> 
+        <span style="float: right; margin: 0px;">
+          <!-- <button type="button" class="btn btn-default btn-lg">Notification <span class="badge">2</span></button> -->
+      </span>
+    </div>  
   {{/if}}
-  </ul>
 </template>
 
 <template name="dashboard">
-  {{>navigation}}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+       
   <br>
   {{#if currentUser}}
     <h2>Hello {{email_address}}!</h2>
@@ -83,10 +134,29 @@
     <br>
     <a href="{{pathFor route='login'}}">login</a>
   {{/if}}
+
+      <a href="{{pathFor route='marketplaceUser'}}">Add Product</a>
+      <a href="{{pathFor route='productViewUser'}}">View Added Product</a>
+
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+
 </template>
 
 <template name="search">
-  <br>
+
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <br>
   {{#if currentUser}}
     <h2>Hello {{email_address}}! What would you like to search today?</h2>
   {{else}}
@@ -130,6 +200,14 @@
     {{/if}}
 
   </form>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+
+  
 
   <!-- {{> DynamicTemplate template=getResults data=getData}} -->
 </template>
@@ -147,16 +225,30 @@
 </template>
  -->
 <template name="login">
-  <h2>login</h2>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <h2>Login</h2>
   <form class="login-input">
     <input type="email" name="email" placeholder="Enter email address" required/>
     <input type="password" name="password" placeholder="Enter new password" required/>
     <input type="submit" value="Submit" />
   </form>
   <ul>
-    <li><a href="{{pathFor route='forgot'}}">Forgot Password</a></li>
-    <li><a href="{{pathFor route='register'}}">register</a></li>
+    <!-- <li><a href="{{pathFor route='forgot'}}">Forgot Password</a></li> -->
+   <!--  <li><a href="{{pathFor route='register'}}"><h2>Register</h2></a></li> -->
   </ul>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+  
 </template>
 
 <template name="phoneVerif">
@@ -168,20 +260,80 @@
 </template>
 
 <template name="notFound">
-  <h3>Error 404</h3>
-  <p>Sorry, that page doesn't exist</p>
-  <a href="/">GO TO HOME</a>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <h3>Error 404</h3>
+        <p>Sorry, that page doesn't exist</p>
+       <a href="/">GO TO HOME</a>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
 </template>
 
-<template name="marketplace">
-  {{> newProduct}}
-  <section class="products">
-    {{#each products}}
-      {{name}}
-    {{/each}}
-  </section>
+<template name="marketplaceUser">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        {{> newProduct}}
+        <section class="products">
+          {{#each products}}
+            {{> productView}}
+          {{/each}}
+        </section>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right">Contact Support<br>FAQ about this page</div>
+  </div>
+</div>
 </template>
 
 <template name="newProduct">
 {{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
+</template>
+
+<template name="productViewUser">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <section class="products">
+          {{#each products}}
+            {{> productView}}
+          {{/each}}
+    </section>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+    
+</template>
+
+<template name="productView">
+  <article class="productViewArticle">
+    <h3>{{name}}</h3>
+    <p>{{category}}</p>
+    <p>{{grade}}</p>
+    <p>{{size}}</p>
+    <p>{{age}}</p>
+  </article>
 </template>

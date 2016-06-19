@@ -1,0 +1,74 @@
+/* CSS declarations go here */
+
+@font-face {
+  font-family: SanFrancisco-Thin;
+  src: url("../imports/font/thin.otf");
+}
+
+@font-face {
+  font-family: SanFrancisco-Medium;
+  src: url("../imports/font/medium.otf");
+}
+
+@font-face {
+  font-family: SanFrancisco-Light;
+  src: url("../imports/font/light.otf");
+}
+
+@font-face {
+  font-family: SanFrancisco-Regular;
+  src: url("../imports/font/regular.otf");
+}
+
+@font-face {
+  font-family: SanFrancisco-Ultralight;
+  src: url("../imports/font/ultralight.otf");
+}
+
+body {
+  font-family: SanFrancisco-Thin;
+}
+
+.jumbotron-head {
+  margin: 0px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 140%;
+  padding: 4%;
+  padding-top: 1%;
+}
+
+.jumbotron-head2 {
+  margin: 0px;
+  background-color: #49628a;
+  color: #ffffff;
+  font-size: 250%;
+  padding-top: 3%;
+  padding-bottom: 8%;
+  padding-left: 4%;
+  padding-right: 4%;
+  
+}
+
+
+#col-left {
+  background: #f4f5aa;
+  height: 100vh;
+}
+
+#col-right {
+  background: #f4f5aa ;
+  height: 100vh;
+}
+
+#content {
+  text-align: right;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul#menu li {
+    display:inline;
+}

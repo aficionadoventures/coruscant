@@ -10,7 +10,7 @@ import '../imports/api/userdata.js';
 
 Meteor.subscribe('products');
 
-Template.Products.helpers({
+Template.marketplace.helpers({
 	products: ()=> {
 		return Products.find({});
 	}
