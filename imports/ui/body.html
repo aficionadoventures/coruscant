@@ -55,14 +55,14 @@
 </template>
 
 <template name="register">
-<!--   <div class="container-fluid">
+  <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
 
   <div class="col-sm-7 col-md-7" id="col-mid">
     <div class="col-sm-2 col-md-2"></div>
     <div class="col-sm-8 col-md-8">
- -->  <h2>Register</h2>
+  <h2>Register</h2>
   <form class="email-input">
   <ul>
   <li><input type="text" name="name" placeholder="Enter name" required=""/></li>
@@ -114,14 +114,22 @@
   <li>{{error_first_step}}</li>
   </ul>
 
+  <ul>
+  <li>{{status_message}}</li>
+  </ul>
+
+
   <input type="submit" value="Submit" />
+  {{#if skip_allow}}
+    <input type="button" name="skip" value="Skip" />
+  {{/if}}
   </form>
-<!--   </div>
+  </div>
   <div class="col-sm-2 col-md-2"></div>      
   </div>            
   <div class="col-sm-3 col-md-3" id="col-right"></div>
   </div>
-  </div> -->
+  </div>
   <!--   <a href="{{pathFor route='phoneVerifRoute'}}">Enter OTP</a> -->
   <!--   <a href="{{pathFor route='reset'}}">Reset Password</a>
 <a href="{{pathFor route='forgot'}}">Forgot Password</a> -->

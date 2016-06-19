@@ -7,8 +7,9 @@ import './body.html';
 Template.register.onCreated(function() {
     let template = Template.instance();
     template.first_step_done = new ReactiveVar(false);
-    template.error_occurred = new ReactiveVar(false);
     template.error_reg = new ReactiveVar("");
+    template.skip_allowed = new ReactiveVar(false);
+    template.status_message = new ReactiveVar("");
 });
 
 Template.register.events({
@@ -26,21 +27,15 @@ Template.register.events({
                 state : template.find('[name="state"]').value,
             };
 
-            console.log(user);
             Accounts.createUser(user, function(error) {
                 if (error) {
                     template.error_reg.set('Error occurred: ' + error.reason);
-                    template.error_occurred.set(true);
                 } else {
-                    console.log('Sending verification email...');
                     Meteor.call('sendVerificationLink', function(error, response) {
                         if (!error) {
-                            console.log('Sending OTP...');
-                            Meteor.call('sendOTP', function(error, response) {
-                                if (error) {
-                                    template.error_reg.set('Error occurred: ' + error.reason);
-                                } else {
-                                    console.log('Should enter OTP now...');
+                            Meteor.call('sendOTP', function(error) {
+                                    template.status_message.set("Enter OTP sent to your number.");
+                                    template.skip_allowed.set(true);
                                     template.first_step_done.set(true);
                                     $('[name="name"]').attr('disabled', '');
                                     $('[name="email"]').attr('disabled', '');
@@ -49,35 +44,44 @@ Template.register.events({
                                     $('[name="phone"]').attr('disabled', '');
                                     $('[name="city"]').attr('disabled', '');
                                     $('[name="state"]').attr('disabled', '');   
-                                }
                             });
                         }
                     });
                 }
             });
+            template.status_message.set("Storing your details safely...");
         } else {
             let input_otp = template.find('[name="otp_value"]').value;
-            console.log('Verifying OTP...');
             Meteor.call('verifyOTP', Meteor.userId(), input_otp, function(error, response) {
                 if (error) {
                     template.error_reg.set("Error occurred: " + error.reason);
                 } else {
+                    template.status_message.set("");
                     Router.go('/dashboard');
                 }
             });
         }
     },
+    'click #skip' : function(event, template) {
+        event.preventDefault();
+        template.status_message.set("");
+        Router.go('/dashboard');
+    },
 });
 
 Template.register.helpers({
     error_first_step : function() {
-        console.log('in error_first_step...');
         return Template.instance().error_reg.get();
     },
     verification : function() {
-        console.log('in verification...');
         if (Template.instance().first_step_done.get()) {
             return "verification";
         }
+    },
+    status_message : function() {
+        return Template.instance().status_message.get();
+    },
+    skip_allow : function() {
+        return Template.instance().skip_allowed.get();
     }
 });
