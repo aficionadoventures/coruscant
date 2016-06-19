@@ -1,12 +1,21 @@
 <template name="main">
     
     {{> navigation}}
-    <hr />
+    
     {{> yield}}
-    <hr />
-    <footer>
-      <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
-    </footer>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" style="background-color: #f4f5aa;"></div>
+    
+    <div class="col-sm-7 col-md-7">
+      {{> footer}}
+    </div>
+    <div class="col-sm-3 col-md-3" style="background-color: #f4f5aa;"></div>
+  </div>
+</div>
+    
+    
 </template>
 
 <template name="home">
@@ -146,35 +155,36 @@
 <template name="navigation">
   {{#if currentUser}}
     <div class="jumbotron jumbotron-head">
-      <span style="float: left;"><a href="/">Aficionado</a></span> 
+      <span style="float: left;"><a href="/" id="a-nav">Aficionado</a></span> 
       <span style="float: right;">
         <ul>
-          <li style="display: inline;"><a href="{{pathFor route='search'}}">Search&emsp;</a></li>
-          <li style="display: inline;"><a href=# class="logout_control">logout &emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='search'}}" id="a-nav">Search&emsp;</a></li>
+          <li style="display: inline;"><a href=# class="logout_control" id="a-nav">logout &emsp;</a></li>
           <span class="glyphicon glyphicon-user"></span>
         </ul>
       </span>      
     </div>
     <div class="jumbotron jumbotron-head2">
-      <span style="float: left; margin: 0px;">Get Going!</span> 
+      <span style="float: left; margin: 0px; color: white;">Get Going!</span> 
         <span style="float: right; margin: 0px;">
           <button type="button" class="btn btn-default btn-lg">Notification <span class="badge">2</span></button>
       </span>
     </div>
   {{else}}
     <div class="jumbotron jumbotron-head">
-      <span style="float: left;">Aficionado</span> 
+      <span style="float: left;"><a href="/" id="a-nav">Aficionado</a></span> 
       <span style="float: right;">
         <ul class="menu">
-          <li style="display: inline;"><a href="{{pathFor route='search'}}">Search&emsp;</a></li>
-          <li style="display: inline;"><a href="{{pathFor route='register'}}">Register&emsp;</a></li>
-          <li style="display: inline;"><a href="{{pathFor route='login'}}">Login&emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='search'}}" id="a-nav">Search&emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='register'}}" id="a-nav">Register&emsp;</a></li>
+          <li style="display: inline;"><a href="{{pathFor route='login'}}" id="a-nav">Login&emsp;</a></li>
+          <span class="glyphicon glyphicon-user"></span>
         </ul>
-      <span class="glyphicon glyphicon-user"></span>
+      
       </span>
     </div>
     <div class="jumbotron jumbotron-head2">
-      <span style="float: left; margin: 0px;">Making Restaurant Scalable!</span> 
+      <span style="float: left; margin: 0px; color: white;">Making Restaurant Scalable!</span> 
         <span style="float: right; margin: 0px;">
           <!-- <button type="button" class="btn btn-default btn-lg">Notification <span class="badge">2</span></button> -->
       </span>
@@ -240,9 +250,9 @@
       <div class="col-sm-10 col-md-10">
         <br>
   {{#if currentUser}}
-    <h2>Hello {{email_address}}! What would you like to search today?</h2>
+    <h3>Hello {{email_address}}! What would you like to search today?</h3>
   {{else}}
-    <h2>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h2>
+    <h3>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h3>
   {{/if}}
 
   <form class="search_input">
@@ -414,4 +424,10 @@
     <p>{{size}}</p>
     <p>{{age}}</p>
   </article>
+</template>
+
+<template name="footer">
+  <footer>
+      <p>Copyright &copy; Aficionado Ventures Pvt. Ltd., 2016.</p>
+  </footer>
 </template>

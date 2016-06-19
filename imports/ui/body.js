@@ -121,7 +121,7 @@ Template.navigation.events({
     'click .logout_control' : function(event) {
         event.preventDefault();
         Meteor.logout();
-        Router.go('/');
+        Router.go('http://aficionadoventures.com');
     }
 });
 

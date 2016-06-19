@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: SanFrancisco-Thin;
-  src: url("../imports/font/thin.otf");
+  src: url('/imports/font/thin.otf');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: SanFrancisco-Ultralight;
-  src: url("../imports/font/ultralight.otf");
+  src: url("/imports/font/ultralight.otf");
 }
 
 body {
@@ -40,14 +40,20 @@ body {
 
 .jumbotron-head2 {
   margin: 0px;
+  color: white;
   background-color: #49628a;
-  color: #ffffff;
-  font-size: 250%;
+  font-family: SanFrancisco-Thin;
+  font-size: 200%;
   padding-top: 3%;
   padding-bottom: 8%;
   padding-left: 4%;
   padding-right: 4%;
   
+}
+
+
+#a-nav {
+  color: #ffffff;
 }
 
 
