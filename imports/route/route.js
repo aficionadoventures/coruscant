@@ -73,11 +73,17 @@ Router.route('/verify-phone', function () {
     this.render('phoneVerif');
     }, {
     name: 'phoneVerifRoute'
-})
+});
 
 Router.route('/marketplaceUser', function () {
     this.render('marketplaceUser');
     }, {
     name: 'marketplaceUser'
-})
+});
 
+
+Router.route('/productViewUser', function () {
+    this.render('productViewUser');
+    }, {
+    name: 'productViewUser'
+});

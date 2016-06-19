@@ -135,6 +135,9 @@
     <a href="{{pathFor route='login'}}">login</a>
   {{/if}}
 
+      <a href="{{pathFor route='marketplaceUser'}}">Add Product</a>
+      <a href="{{pathFor route='productViewUser'}}">View Added Product</a>
+
       </div>
       <div class="col-sm-2 col-md-2"></div>      
     </div>            
@@ -283,6 +286,29 @@
 
 <template name="newProduct">
 {{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
+</template>
+
+<template name="productViewUser">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <section class="products">
+          {{#each products}}
+            {{> productView}}
+          {{/each}}
+    </section>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+    
 </template>
 
 <template name="productView">
