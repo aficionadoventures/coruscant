@@ -40,7 +40,7 @@ body {
 
 .jumbotron-head2 {
   margin: 0px;
-  background-color: #4d7e80;
+  background-color: #49628a;
   color: #ffffff;
   font-size: 250%;
   padding-top: 3%;
@@ -53,6 +53,11 @@ body {
 
 #col-left {
   background: #f4f5aa;
+  height: 100vh;
+}
+
+#col-right {
+  background: #f4f5aa ;
   height: 100vh;
 }
 

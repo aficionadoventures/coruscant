@@ -93,7 +93,7 @@
       </span>
     </div>
     <div class="jumbotron jumbotron-head2">
-      <span style="float: left; margin: 0px;">Making Restaurant Scalable</span> 
+      <span style="float: left; margin: 0px;">Making Restaurant Scalable!</span> 
         <span style="float: right; margin: 0px;">
           <!-- <button type="button" class="btn btn-default btn-lg">Notification <span class="badge">2</span></button> -->
       </span>
@@ -102,7 +102,16 @@
 </template>
 
 <template name="dashboard">
-  {{>navigation}}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+
+        
   <br>
   {{#if currentUser}}
     <h2>Hello {{email_address}}!</h2>
@@ -111,10 +120,29 @@
     <br>
     <a href="{{pathFor route='login'}}">login</a>
   {{/if}}
+
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+  
+
+
+  
 </template>
 
 <template name="search">
-  <br>
+
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <br>
   {{#if currentUser}}
     <h2>Hello {{email_address}}! What would you like to search today?</h2>
   {{else}}
@@ -141,6 +169,14 @@
     {{/if}}
 
   </form>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+
+  
 
   <!-- {{> DynamicTemplate template=getResults data=getData}} -->
 </template>
@@ -158,7 +194,14 @@
 </template>
  -->
 <template name="login">
-  <h2>login</h2>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <h2>Login</h2>
   <form class="login-input">
     <input type="email" name="email" placeholder="Enter email address" required/>
     <input type="password" name="password" placeholder="Enter new password" required/>
@@ -168,6 +211,13 @@
     <li><a href="{{pathFor route='forgot'}}">Forgot Password</a></li>
     <li><a href="{{pathFor route='register'}}">register</a></li>
   </ul>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+  
 </template>
 
 <template name="phoneVerif">
@@ -179,18 +229,45 @@
 </template>
 
 <template name="notFound">
-  <h3>Error 404</h3>
-  <p>Sorry, that page doesn't exist</p>
-  <a href="/">GO TO HOME</a>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        <h3>Error 404</h3>
+        <p>Sorry, that page doesn't exist</p>
+       <a href="/">GO TO HOME</a>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
 </template>
 
 <template name="marketplaceUser">
-  {{> newProduct}}
-  <section class="products">
-    {{#each products}}
-      {{> productView}}
-    {{/each}}
-  </section>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+        {{> newProduct}}
+        <section class="products">
+          {{#each products}}
+            {{> productView}}
+          {{/each}}
+        </section>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right">Contact Support<br>FAQ about this page</div>
+  </div>
+</div>
 </template>
 
 <template name="newProduct">
