@@ -67,6 +67,22 @@ Meteor.methods({
         });
         return results;
     },
+    'list_prods' : function(userId) {
+        results = [];
+        Products.find({
+            vendor : userId,
+        }).forEach(function(doc) {
+            results.push({
+                name : doc.name,
+                category : doc.category,
+                price : doc.price,
+                grade : doc.grade,
+                size : doc.size,
+                age : doc.age
+            });
+        });
+        return results;
+    },
 });
 
 Accounts.onCreateUser(function(options, user) {

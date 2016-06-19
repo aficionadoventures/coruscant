@@ -90,12 +90,30 @@ Template.login.events({
     },
 });
 
+Template.dashboard.onCreated(function() {
+    let tmpl = Template.instance();
+    tmpl.prod_lists = new ReactiveVar([]);
+    
+});
+
+Template.dashboard.events({
+    'click #view_my_added' : function(event, template) {
+        event.preventDefault();
+        Meteor.call('list_prods', Meteor.userId(), {returnStubValue: true}, (error, results) => {
+            template.prod_lists.set(results);
+        });
+    },
+});
+
 Template.dashboard.helpers({
     email_address : function() {
         return Meteor.user().emails[0].address;
     },
     currentUser : function() {
         return Meteor.userId();
+    },
+    prods : function() {
+        return Template.instance().prod_lists.get();
     }
 });
 

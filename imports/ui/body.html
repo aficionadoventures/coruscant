@@ -136,7 +136,23 @@
   {{/if}}
 
       <a href="{{pathFor route='marketplaceUser'}}">Add Product</a>
-      <a href="{{pathFor route='productViewUser'}}">View Added Product</a>
+      <a id="view_my_added" href="#">view my added products</a>
+
+      <h3>your products</h3>
+      <ul>
+      {{#each prod in prods}}
+      <li>
+      {{#with prod}}
+        <span>name={{name}}</span>
+        <span>age={{age}}</span>
+        <span>size={{size}}</span>
+        <span>price={{price}}</span>
+        <span>grade={{grade}}</span>
+        <span>category={{category}}</span>
+        {{/with}}
+      </li>
+      {{/each}}
+      </ul>
 
       </div>
       <div class="col-sm-2 col-md-2"></div>      
