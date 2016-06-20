@@ -22,12 +22,22 @@
 
 @font-face {
   font-family: SanFrancisco-Ultralight;
-  src: url("/imports/font/ultralight.otf");
+  src: url("../imports/font/ultralight.otf");
 }
 
 body {
   font-family: SanFrancisco-Thin;
 }
+
+.Top-Black {
+  width: 1018px;
+  height: 54px;
+  background-color: #000000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;
+}
+
+
 
 .jumbotron-head {
   margin: 0px;
@@ -36,21 +46,54 @@ body {
   font-size: 140%;
   padding: 4%;
   padding-top: 1%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;
+  font-family: SanFrancisco-Thin;
 }
 
 .jumbotron-head2 {
   margin: 0px;
-  color: white;
-  background-color: #49628a;
+  background-color: #1fb996;
   font-family: SanFrancisco-Thin;
   font-size: 200%;
   padding-top: 3%;
   padding-bottom: 8%;
   padding-left: 4%;
   padding-right: 4%;
-  
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;  
 }
 
+.jumbotron-head3 {
+  margin: 0px;
+  font-family: SanFrancisco-Thin;
+  font-size: 200%;
+  padding-top: 3%;
+  padding-bottom: 8%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: rgba(48, 87, 132, 0.84);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;
+}
+
+
+#jumbotron-register1 {
+  font-size: 120%;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  float: left;
+  margin: 0px; 
+  color: white;
+
+}
+
+.control-label {
+  text-align: right;
+}
 
 #a-nav {
   color: #ffffff;
@@ -60,16 +103,16 @@ body {
 #col-left {
   background: #f4f5aa;
   height: 100vh;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #col-right {
   background: #f4f5aa ;
   height: 100vh;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
 }
 
-#content {
-  text-align: right;
-}
 
 ul {
   list-style-type: none;
@@ -77,4 +120,8 @@ ul {
 
 ul#menu li {
     display:inline;
+}
+
+h1, h2, p, div, span, li, ul, h3, h4, form {
+  font-family: SanFrancisco-Thin;
 }
