@@ -61,7 +61,7 @@ Meteor.methods({
                 price : doc.price,
                 grade : doc.grade,
                 size : doc.size,
-                age : doc.age
+                age : doc.age,
             });
         });
         return results;
