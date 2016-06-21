@@ -2,17 +2,17 @@
 
 @font-face {
   font-family: SanFrancisco-Thin;
-  src: url('/imports/font/thin.otf');
+  src: url('../public/font/thin.otf');
 }
 
 @font-face {
   font-family: SanFrancisco-Medium;
-  src: url("../imports/font/medium.otf");
+  src: url("font/medium.otf");
 }
 
 @font-face {
   font-family: SanFrancisco-Light;
-  src: url("../imports/font/light.otf");
+  src: url("font/light.otf");
 }
 
 @font-face {
