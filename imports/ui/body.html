@@ -5,7 +5,7 @@
     {{> yield}}
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" style="background-color: #f4f5aa;"></div>
     
     <div class="col-sm-7 col-md-7">
@@ -23,7 +23,7 @@
       
     
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
@@ -63,7 +63,7 @@
 
 
   <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
 
   <div class="col-sm-7 col-md-7" id="col-mid">
@@ -182,9 +182,10 @@
 <div class="row">
      <label class="control-label col-sm-3 col-md-3" for="submit"></label>
   <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
-  {{#if skip_allow}}
+  <!-- {#if skip_allow}}
     <input type="button" name="skip" value="Skip" />
-  {{/if}}</div>
+  {{/if}}</div> -->
+</div>
 </div>
 
   
@@ -201,9 +202,17 @@
 </template>
 
 <template name="verification">
-  <ul>
-  <li><input type="text" name="otp_value" placeholder="Enter OTP"></li>
-  </ul>
+  <div class="row">
+     <label class="control-label col-sm-3 col-md-3" for="submit">OTP</label>
+  <div class="col-sm-5 col-md-5" ><input type="text" name="otp_value" placeholder="Enter OTP" style="border-radius: 8px; height: 25px;
+  background-color: #a7fcd7;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;"/>
+  
+</div>
+</div>
+  
+  
 </template>
 
 <template name="forgotPass">
@@ -232,7 +241,7 @@
       <span style="float: right;">
         <ul>
           <li style="display: inline;"><a href="{{pathFor route='search'}}" id="a-nav">Search&emsp;</a></li>
-          <li style="display: inline;"><a href=# class="logout_control" id="a-nav">logout &emsp;</a></li>
+          <li style="display: inline;"><a href=# class="logout_control" id="a-nav">Logout &emsp;</a></li>
           <span class="glyphicon glyphicon-user"></span>
         </ul>
       </span>      
@@ -272,7 +281,7 @@
 <template name="dashboard">
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
@@ -319,7 +328,7 @@
 <template name="search">
 
  <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
@@ -332,9 +341,24 @@
     <h3>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h3>
   {{/if}}
 
-  <form class="search_input">
-    <input type="text" name="name_query" placeholder="Enter name">
 
+<br><br>
+
+
+  <form class="search_input">
+
+<div class="row">
+    <label class="control-label col-sm-3 col-md-3" for="password"></label>
+  <div class="col-sm-5 col-md-5" ><input type="text" name="name_query" placeholder="Search" class="form-control" required="" style="border-radius: 8px; height: 25px;
+  background-color: #a7fcd7;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;" /></div>
+  </div>
+
+
+<div class="row">
+    <label class="control-label col-sm-3 col-md-3" for="password"></label>
+  <div class="col-sm-5 col-md-5" >
 <p> sort by:
     <select id="sort_param">
       <option value=size>size</option>
@@ -348,8 +372,17 @@
       <option value=descending>descending</option>
     </select>
 </p>
+</div>
+</div>
 
-<input type="submit" value="Submit" />
+<div class="row">
+     <label class="control-label col-sm-3 col-md-3" for="submit"></label>
+  <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
+  <!-- {#if skip_allow}}
+    <input type="button" name="skip" value="Skip" />
+  {{/if}}</div> -->
+</div>
+</div>
 
     {{#if search_complete}}
       <ul>
@@ -395,25 +428,40 @@
  -->
 <template name="login">
   <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
+
     <div class="col-sm-7 col-md-7" id="col-mid">
-      <div class="col-sm-2 col-md-2"></div>
-      <div class="col-sm-8 col-md-8">
-        <h2>Login</h2>
-  <form class="login-input">
-    <input type="email" name="email" placeholder="Enter email address" required="" />
-    <input type="password" name="password" placeholder="Enter new password" required="" />
-    <input type="submit" value="Submit" />
+ <h2><br>&emsp;&emsp;&emsp;&emsp;Login<br><br></h2>
+<form class="login-input">
+    <div class="row">
+    <label class="control-label col-sm-3 col-md-3" for="email">E-mail</label>
+  <div class="col-sm-5 col-md-5"><input type="email" name="email" placeholder="&nbsp;&nbsp;user@domain.com" required="" style="border-radius: 8px; height: 25px;
+  background-color: #a7fcd7;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;"/></div>
+  </div>
+  
+   <div class="row">
+    <label class="control-label col-sm-3 col-md-3" for="email">Password</label>
+  <div class="col-sm-5 col-md-5"><input type="password" name="password" placeholder="&nbsp;&nbsp;......" required="" style="border-radius: 8px; height: 25px;
+  background-color: #a7fcd7;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;"/></div>
+  </div>
+  
+  <div class="row">
+     <label class="control-label col-sm-3 col-md-3" for="submit"></label>
+  <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
+  </div>
+  </div>
+
   </form>
-  <ul>
+ </div>
     <!-- <li><a href="{{pathFor route='forgot'}}">Forgot Password</a></li> -->
    <!--  <li><a href="{{pathFor route='register'}}"><h2>Register</h2></a></li> -->
-  </ul>
-      </div>
-      <div class="col-sm-2 col-md-2"></div>      
-    </div>            
+             
     <div class="col-sm-3 col-md-3" id="col-right"></div>
   </div>
 </div>
@@ -431,7 +479,7 @@
 <template name="notFound">
 
   <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
@@ -450,7 +498,7 @@
 
 <template name="marketplaceUser">
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
@@ -473,7 +521,7 @@
 <template name="productViewUser">
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" id="row-container">
     <div class="col-sm-2 col-md-2" id="col-left"></div>
     
     <div class="col-sm-7 col-md-7" id="col-mid">
