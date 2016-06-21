@@ -105,19 +105,16 @@ body, html {
 #col-left {
   background: #f4f5aa;
   height: 100vh;
-
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 #col-right {
   background: #f4f5aa ;
-  min-height: 100vh;
-  position: relative;
+  height: 100vh;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
 }
  #row-container {
-
 
  }
 
