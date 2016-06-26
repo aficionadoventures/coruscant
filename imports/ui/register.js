@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 
 import './body.html';
+import './pages/pages.js';
 
 Template.register.onCreated(function() {
     let template = Template.instance();

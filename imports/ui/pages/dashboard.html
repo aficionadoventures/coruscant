@@ -1,0 +1,47 @@
+<template name="dashboard">
+
+<div class="container-fluid">
+  <div class="row" id="row-container">
+    <div class="col-sm-2 col-md-2" id="col-left"></div>
+    
+    <div class="col-sm-7 col-md-7" id="col-mid">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-8 col-md-8">
+       
+  <br>
+  {{#if currentUser}}
+    <h2>Hello {{email_address}}!</h2>
+  {{else}}
+    <h2>you need to be logged in!</h2>
+    <br>
+    <a href="{{pathFor route='login'}}">login</a>
+  {{/if}}
+
+      <a href="{{pathFor route='marketplaceUser'}}">Add Product</a>
+      <a id="view_my_added" href="#">view my added products</a>
+
+      <h3>your products</h3>
+<div style="overflow: auto; height: 70vh;">
+      <ul>
+      {{#each prod in prods}}
+      <li>
+      {{#with prod}}
+        <span>name={{name}}</span>
+        <span>age={{age}}</span>
+        <span>size={{size}}</span>
+        <span>price={{price}}</span>
+        <span>grade={{grade}}</span>
+        <span>category={{category}}</span>
+        {{/with}}
+      </li>
+      {{/each}}
+      </ul>
+</div>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>      
+    </div>            
+    <div class="col-sm-3 col-md-3" id="col-right"></div>
+  </div>
+</div>
+
+</template>
