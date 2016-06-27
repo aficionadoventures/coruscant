@@ -1,28 +1,47 @@
 /* CSS declarations go here */
-
 @font-face {
-  font-family: SanFrancisco-Thin;
-  src: url('../public/font/thin.otf');
+  font-family: SanFrancisco-Black;
+  src: url('/font/SanFranciscoDisplay-Black.otf') format('opentype');
 }
 
 @font-face {
-  font-family: SanFrancisco-Medium;
-  src: url("font/medium.otf");
+  font-family: SanFrancisco-Bold;
+  src: url('/font/SanFranciscoDisplay-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SanFrancisco-Heavy;
+  src: url('/font/SanFranciscoDisplay-Heavy.otf') format('opentype');
 }
 
 @font-face {
   font-family: SanFrancisco-Light;
-  src: url("font/light.otf");
+  src: url('/font/SanFranciscoDisplay-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SanFrancisco-Medium;
+  src: url('/font/SanFranciscoDisplay-Medium.otf') format('opentype');
 }
 
 @font-face {
   font-family: SanFrancisco-Regular;
-  src: url("../imports/font/regular.otf");
+  src: url('/font/SanFranciscoDisplay-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SanFrancisco-Semibold;
+  src: url('/font/SanFranciscoDisplay-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SanFrancisco-Thin;
+  src: url('/font/SanFranciscoDisplay-Thin.otf') format('opentype');
 }
 
 @font-face {
   font-family: SanFrancisco-Ultralight;
-  src: url("../imports/font/ultralight.otf");
+  src: url('/font/SanFranciscoDisplay-Ultralight.otf') format('opentype');
 }
 
 body, html {
