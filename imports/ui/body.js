@@ -1,5 +1,6 @@
 import './body.html';
 import './pages/pages.js';
+import './components/components.js';
 
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';

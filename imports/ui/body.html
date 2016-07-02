@@ -72,49 +72,6 @@
   </form>
 </template>
 
-<template name="navigation">
-  {{#if currentUser}}
-    <div class="jumbotron jumbotron-head">
-      <span style="float: left;"><a href="/" id="a-nav">Aficionado</a></span> 
-      <span style="float: right;">
-        <ul>
-          <li style="display: inline;"><a href="{{pathFor route='search'}}" id="a-nav">Search&emsp;</a></li>
-          <li style="display: inline;"><a href=# class="logout_control" id="a-nav">Logout &emsp;</a></li>
-          <span class="glyphicon glyphicon-user"></span>
-        </ul>
-      </span>      
-    </div>
-
-    <div class="jumbotron jumbotron-head3">
-      <span style="" id="jumbotron-register1">Make Restaurants Scalable!</span> 
-        <span style="float: right; margin: 0px;">
-          <button type="button" class="btn btn-default btn-lg" style="border-radius: 39px; background-color: #ddefef;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); border: solid 1px #a5a2a2;">Notification <span class="badge" ></span></button>
-      </span>
-    </div>
-    
-  {{else}}
-    <div class="jumbotron jumbotron-head">
-      <span style="float: left;"><a href="/" id="a-nav">Aficionado</a></span> 
-      <span style="float: right;">
-        <ul class="menu">
-          <li style="display: inline;"><a href="{{pathFor route='search'}}" id="a-nav">Search&emsp;</a></li>
-          <li style="display: inline;"><a href="{{pathFor route='register'}}" id="a-nav">Register&emsp;</a></li>
-          <li style="display: inline;"><a href="{{pathFor route='login'}}" id="a-nav">Login&emsp;</a></li>
-          <span class="glyphicon glyphicon-user"></span>
-        </ul>
-      
-      </span>
-    </div>
-
-
-    <div class="jumbotron jumbotron-head2">
-      <span style="" id="jumbotron-register1">Make Restaurants Scalable</span> 
-        
-    </div>
-
-    
-  {{/if}}
-</template>
 
 
 
@@ -130,27 +87,6 @@
 
 
 
-<template name="marketplaceUser">
-<div class="container-fluid">
-  <div class="row" id="row-container">
-    <div class="col-sm-2 col-md-2" id="col-left"></div>
-    
-    <div class="col-sm-7 col-md-7" id="col-mid">
-      <div class="col-sm-2 col-md-2"></div>
-      <div class="col-sm-8 col-md-8">
-        {{> newProduct}}
-        
-      </div>
-      <div class="col-sm-2 col-md-2"></div>      
-    </div>            
-    <div class="col-sm-3 col-md-3" id="col-right"></div>
-  </div>
-</div>
-</template>
-
-<template name="newProduct">
-{{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
-</template>
 
 <template name="productViewUser">
 

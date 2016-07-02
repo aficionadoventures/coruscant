@@ -6,12 +6,3 @@ import '../imports/ui/body.js';
 import '../imports/ui/register.js';
 import '../imports/api/userdata.js';
 
-
-
-Meteor.subscribe('products');
-
-Template.marketplace.helpers({
-	products: ()=> {
-		return Products.find({});
-	}
-});
