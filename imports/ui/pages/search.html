@@ -57,7 +57,31 @@
   {{/if}}</div> -->
 </div>
 </div>
+</form>
+      </div>
+<div class="col-sm-12 col-md-12 column productbox" style="margin:0px; border: 0px; padding: 0px; display: block; height: 10vh;">
+    {{#if search_complete}}
+      {{#each result in results}}
+      <div class="col-md-6 column productbox">
+        {{#with result}}
+        
+          <img src="/placeholder/coming-soon1.jpg" class="img-responsive" style="margin:0px; border:0px; padding: 0px;  ">
+            <span>name = {{name}}</span>
+            <span>category = {{category}}</span>
+            <span>grade = {{grade}}</span>
+            <span>price = {{price}}</span>
+            <span>age = {{age}}</span>
+            <span>size = {{size}}</span>
+        {{/with}}
+         </div>
+       
+      {{/each}}
+      
+    {{/if}}
+</div>
 
+
+<!-- 
 <div style="overflow: auto; height: 50vh;">
     {{#if search_complete}}
       <ul>
@@ -76,9 +100,8 @@
       </ul>
     {{/if}}
 </div>
-
-  </form>
-      </div>
+ -->
+  
       <div class="col-sm-1 col-md-1"></div>      
     </div>            
     <div class="col-sm-3 col-md-3" id="col-right"></div>
