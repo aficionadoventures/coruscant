@@ -1,65 +1,101 @@
 
 <template name="search">
 
- <div class="container-fluid">
-  <div class="row" id="row-container">
-    <div class="col-sm-2 col-md-2" id="col-left"></div>
+  <div class="container-fluid">
+    <div class="row" id="row-container">
+      <div class="col-sm-2 col-md-2" id="col-left"></div>
     
-    <div class="col-sm-7 col-md-7" id="col-mid">
-      <div class="col-sm-1 col-md-1"></div>
-      <div class="col-sm-10 col-md-10">
-        <br>
-  {{#if currentUser}}
-    <h3>Hello {{email_address}}! What would you like to search today?</h3>
-  {{else}}
-    <h3>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h3>
-  {{/if}}
+      <div class="col-sm-7 col-md-7" id="col-mid">
+     
+              <br>
+        {{#if currentUser}}
+          <h3>Hello {{email_address}}! What would you like to search today?</h3>
+        {{else}}
+          <h3>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h3>
+        {{/if}}
 
 
-<br><br>
+      <br><br>
 
 
-  <form class="search_input">
+        <form class="search_input">
 
-<div class="row">
-    <label class="control-label col-sm-3 col-md-3" for="password"></label>
-  <div class="col-sm-5 col-md-5" ><input type="text" name="name_query" placeholder="Search" class="form-control" required="" style="border-radius: 8px; height: 25px;
-  background-color: #a7fcd7;
-  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-  border: solid 1px #979797;" /></div>
-  </div>
+          <div class="row">
+              <label class="control-label col-sm-3 col-md-3" for="password"></label>
+            <div class="col-sm-5 col-md-5" ><input type="text" name="name_query" placeholder="Search" class="form-control" required="" style="border-radius: 8px; height: 25px;
+            background-color: #a7fcd7;
+            box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+            border: solid 1px #979797;" /></div>
+            </div>
 
 
-<div class="row">
-    <label class="control-label col-sm-3 col-md-3" for="password"></label>
-  <div class="col-sm-5 col-md-5" >
-<p> sort by:
-    <select id="sort_param">
-      <option value=size>size</option>
-      <option value=price>price</option>
-      <option value=age>age</option>
-    </select>
-</p>
-<p> order
-    <select id="order">
-      <option value=ascending>ascending</option>
-      <option value=descending>descending</option>
-    </select>
-</p>
-</div>
-</div>
+          <div class="row">
+                <label class="control-label col-sm-3 col-md-3" for="password"></label>
+              <div class="col-sm-5 col-md-5" >
+            <p> sort by:
+                <select id="sort_param">
+                  <option value=size>size</option>
+                  <option value=price>price</option>
+                  <option value=age>age</option>
+                </select>
+            </p>
+            <p> order
+                <select id="order">
+                  <option value=ascending>ascending</option>
+                  <option value=descending>descending</option>
+                </select>
+            </p>
+            </div>
+          </div>
 
-<div class="row">
-     <label class="control-label col-sm-3 col-md-3" for="submit"></label>
-  <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
-  <!-- {#if skip_allow}}
-    <input type="button" name="skip" value="Skip" />
-  {{/if}}</div> -->
-</div>
-</div>
-</form>
-      </div>
-<div class="col-sm-12 col-md-12 column productbox" style="margin:0px; border: 0px; padding: 0px; display: block; height: 10vh;">
+          <div class="row">
+                 <label class="control-label col-sm-3 col-md-3" for="submit"></label>
+              <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
+              <!-- {#if skip_allow}}
+                <input type="button" name="skip" value="Skip" />
+              {{/if}}</div> -->
+            </div>
+          </div>
+        </form>
+
+        <div class="container">
+          <div id="products" class="row list-group">
+              {{#if search_complete}}
+              {{#each result in results}}
+              {{#with result}}
+                <div class="item  col-xs-6 col-lg-6 col-md-6">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+                                name = {{name}}</h4>
+                            <p class="group inner list-group-item-text">
+                                <span>category = {{category}}</span>
+                                <span>grade = {{grade}}</span>
+                                <span>price = {{price}}</span>
+                                <span>age = {{age}}</span></p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        price = {{price}}</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/with}}  
+            {{/each}}      
+            {{/if}}
+          </div>
+        </div>
+
+      
+
+      
+<!-- <div class="col-sm-12 col-md-12 column productbox" style="margin:0px; border: 0px; padding: 0px; display: block; height: 10vh;">
     {{#if search_complete}}
       {{#each result in results}}
       <div class="col-md-6 column productbox">
@@ -78,8 +114,8 @@
       {{/each}}
       
     {{/if}}
-</div>
-
+</div> -->
+      </div>
 
 <!-- 
 <div style="overflow: auto; height: 50vh;">
@@ -102,11 +138,10 @@
 </div>
  -->
   
-      <div class="col-sm-1 col-md-1"></div>      
-    </div>            
-    <div class="col-sm-3 col-md-3" id="col-right"></div>
+              
+      <div class="col-sm-3 col-md-3" id="col-right"></div>
+    </div>
   </div>
-</div>
 
   
 
