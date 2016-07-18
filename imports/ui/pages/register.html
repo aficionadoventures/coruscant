@@ -23,10 +23,18 @@
   box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   border: solid 1px #979797;" /> </div>
   </div>
+
+  <div class="row">
+    <label class="control-label col-sm-3 col-md-3" for="username">Username</label>
+  <div class="col-sm-5 col-md-5" ><input type="username" name="username" class="form-control" placeholder="username" required="" style="border-radius: 8px; height: 25px;
+  background-color: #a7fcd7;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;" /></div>
+  </div>
   
   <div class="row">
     <label class="control-label col-sm-3 col-md-3" for="email">Email</label>
-  <div class="col-sm-5 col-md-5" ><input type="email" name="email" class="form-control" placeholder="user@domain.com" required="" style="border-radius: 8px; height: 25px;
+  <div class="col-sm-5 col-md-5" ><input type="email" name="email" class="form-control" placeholder="user@domain.com" style="border-radius: 8px; height: 25px;
   background-color: #a7fcd7;
   box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   border: solid 1px #979797;" /></div>
@@ -52,7 +60,7 @@
 <div class="row">
 <label class="control-label col-sm-3 col-md-3" for="phone">Mobile</label>
 
- <div class="col-sm-5 col-md-5" ><input type="text" name="phone" class="form-control" placeholder="Enter phone number" required="" style="border-radius: 8px; height: 25px;
+ <div class="col-sm-5 col-md-5" ><input type="text" name="phone" class="form-control" placeholder="Enter phone number" style="border-radius: 8px; height: 25px;
   background-color: #a7fcd7;
   box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   border: solid 1px #979797;"/></div>
@@ -102,12 +110,7 @@
     <option value="west_bengal">West Bengal</option>
   </select>
  
-
 {{> Template.dynamic template=verification}}
-
-
-
- 
 
   <ul>
   <li>{{error_first_step}}</li>
@@ -119,7 +122,6 @@
 
   </div>
   </div>
-
 
 <div class="row">
      <label class="control-label col-sm-3 col-md-3" for="submit"></label>

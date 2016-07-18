@@ -80,9 +80,11 @@ Template.login.events({
     'submit .login-input' : function(event, template) {
         event.preventDefault();
 
-        var email = $('[name=email]').val();
+        let user = {
+            username : $('[name=username]').val(),
+        };
         var password = $('[name=password]').val();
-        Meteor.loginWithPassword(email, password, (error) => {
+        Meteor.loginWithPassword(user, password, (error) => {
             if (error) {
                 console.log(error.reason);
             } else {

@@ -21,34 +21,71 @@ Template.register.events({
         if (!template.first_step_done.get()) {
             let user = {
                 name : template.find('[name="name"]').value,
-                email : template.find('[name="email"]').value,
+                username : template.find('[name="username"]').value,
+
                 password : template.find('[name="password"]').value,
                 role : template.find('[name="role"]').value,
-                phone : template.find('[name="phone"]').value,
+
                 city : template.find('[name="city"]').value,
                 state : template.find('[name="state"]').value,
             };
+
+            email = template.find('[name="email"]').value;
+            if (email) {
+                user.email = email;
+            }
+
+            phone = template.find('[name="phone"]').value;
+            if (phone) {
+                user.phone = phone;
+            }
 
             Accounts.createUser(user, function(error) {
                 if (error) {
                     template.error_reg.set('Error occurred: ' + error.reason);
                 } else {
-                    Meteor.call('sendVerificationLink', function(error, response) {
-                        if (!error) {
-                            Meteor.call('sendOTP', function(error) {
-                                    template.status_message.set("Enter OTP sent to your number.");
-                                    template.skip_allowed.set(true);
-                                    template.first_step_done.set(true);
-                                    $('[name="name"]').attr('disabled', '');
-                                    $('[name="email"]').attr('disabled', '');
-                                    $('[name="password"]').attr('disabled', '');
-                                    $('[name="role"]').attr('disabled', '');
-                                    $('[name="phone"]').attr('disabled', '');
-                                    $('[name="city"]').attr('disabled', '');
-                                    $('[name="state"]').attr('disabled', '');   
-                            });
-                        }
-                    });
+                    if (email && phone) {
+                        Meteor.call('sendVerificationLink', function(error, response) {
+                            if (!error) {
+                                    Meteor.call('sendOTP', function(error) {
+                                            template.status_message.set("Enter OTP sent to your number.");
+                                            template.skip_allowed.set(true);
+                                            template.first_step_done.set(true);
+                                            $('[name="name"]').attr('disabled', '');
+                                            $('[name="email"]').attr('disabled', '');
+                                            $('[name="password"]').attr('disabled', '');
+                                            $('[name="role"]').attr('disabled', '');
+                                            $('[name="phone"]').attr('disabled', '');
+                                            $('[name="city"]').attr('disabled', '');
+                                            $('[name="state"]').attr('disabled', '');   
+                                    });
+                            }
+                        });
+                    } else if (email && !phone) {
+                        Meteor.call('sendVerificationLink', function(error, response) {
+                            if (!error) {
+                                    template.status_message.set("Phone not specified.");
+                                    template.status_message.set("");
+                                    Router.go('/dashboard');
+                            }
+                        });
+                    } else if (!email && phone) {
+                        Meteor.call('sendOTP', function(error) {
+                                template.status_message.set("Enter OTP sent to your number.");
+                                template.skip_allowed.set(true);
+                                template.first_step_done.set(true);
+                                $('[name="name"]').attr('disabled', '');
+                                $('[name="email"]').attr('disabled', '');
+                                $('[name="password"]').attr('disabled', '');
+                                $('[name="role"]').attr('disabled', '');
+                                $('[name="phone"]').attr('disabled', '');
+                                $('[name="city"]').attr('disabled', '');
+                                $('[name="state"]').attr('disabled', '');   
+                        });
+                    } else {
+                        template.status_message.set("");
+                        Router.go('/dashboard');
+                    }
                 }
             });
             template.status_message.set("Storing your details safely...");
