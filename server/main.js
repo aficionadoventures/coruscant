@@ -43,25 +43,32 @@ Meteor.methods({
 
     'search_name' : function(query) {
         results = [];
-        Products.find({
-            // $or: [
-                $text: {
-                    $search: query.name,
+        var name = '';
+        var split_sort_array = query.name.split(' ').sort();
+        for (i = 0; i < split_sort_array.length; i++) {
+            name = name + '"' + split_sort_array[i].trim() + '" ';
+        }
+        name = name.trim();
 
-                },
-                // { category: name_query },
-                // { grade: name_query },
-            // ]
-        }, {
-            sort: query.sort
-        }).forEach(function(doc) {
+        // var search_array = [];
+        // for (i = 0; i < split_sort_array.length; i++) {
+        //     search_array.push({$text : { $search : split_sort_array[i].trim() }});
+        // }
+        console.log(name);
+        Products.find({
+            // $and: search_array,
+                $text : {
+                    $search: name,
+                    // $caseSensitive: false,
+                    //   $diacriticSensitive: false,
+                }
+            },
+        ).forEach(function(doc) {
             results.push({
+                _id : doc._id,
                 name : doc.name,
-                category : doc.category,
                 price : doc.price,
-                grade : doc.grade,
-                size : doc.size,
-                age : doc.age,
+                params : doc.params,
             });
         });
         return results;

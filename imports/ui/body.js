@@ -34,8 +34,8 @@ Template.search.onCreated(function() {
 });
 
 Template.search.helpers({
-    email_address : function() {
-        return Meteor.user().emails[0].address; 
+    vendor_name : function() {
+        return Meteor.user().name; 
     },
     currentUser : function() {
         return Meteor.userId();
@@ -69,9 +69,10 @@ Template.search.events({
                 sort_order = {age : order}
             }
 
-        Meteor.call('search_name', { name: name_query, sort : sort_order}, {returnStubValue: true}, (error, results) => {
-            template.search_done.set(true);
-            template.results.set(results);
+        Meteor.call('search_name', { name: name_query, sort : sort_order}, {returnStubValue: true},
+            (error, results) => {
+                template.search_done.set(true);
+                template.results.set(results);
         });
     },
 });
@@ -110,8 +111,8 @@ Template.dashboard.events({
 });
 
 Template.dashboard.helpers({
-    email_address : function() {
-        return Meteor.user().emails[0].address;
+    vendor_name : function() {
+        return Meteor.user().name;
     },
     currentUser : function() {
         return Meteor.userId();

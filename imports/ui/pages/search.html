@@ -9,7 +9,7 @@
      
               <br>
         {{#if currentUser}}
-          <h3>Hello {{email_address}}! What would you like to search today?</h3>
+          <h3>Hello {{vendor_name}}! What would you like to search today?</h3>
         {{else}}
           <h3>What would you like to search today? (We can serve you better if you are <a href="{{pathFor route='login'}}">logged in</a>)</h3>
         {{/if}}
@@ -70,11 +70,11 @@
                             <h4 class="group inner list-group-item-heading">
                                 name = {{name}}</h4>
                             <p class="group inner list-group-item-text">
-                                <span>category = {{category}}</span>
                                 <span>grade = {{grade}}</span>
-                                <span>price = {{price}}</span>
-                                <span>age = {{age}}</span></p>
-                            <div class="row">
+                                </p>
+                                <!-- <span>price = {{price}}</span> -->
+                                <!-- <span>age = {{age}}</span></p> -->
+                            <!-- <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <p class="lead">
                                         price = {{price}}</p>
@@ -82,7 +82,7 @@
                                 <div class="col-xs-12 col-md-6">
                                     <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
