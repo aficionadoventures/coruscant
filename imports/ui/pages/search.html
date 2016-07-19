@@ -29,8 +29,9 @@
             </div>
 
 
-          <div class="row">
-                <label class="control-label col-sm-3 col-md-3" for="password"></label>
+            {{#if search_complete}}
+<!--           <div class="row">
+                <label class="control-label col-sm-3 col-md-3"></label>
               <div class="col-sm-5 col-md-5" >
             <p> sort by:
                 <select id="sort_param">
@@ -38,22 +39,47 @@
                   <option value=price>price</option>
                   <option value=age>age</option>
                 </select>
-            </p>
-            <p> order
+            </p> -->
+
+
+<!--             <p> order
                 <select id="order">
                   <option value=ascending>ascending</option>
                   <option value=descending>descending</option>
                 </select>
             </p>
             </div>
-          </div>
+          </div> -->
+
+        <!--     <p> grade</p>
+            <p><input type="checkbox" name="grade_checkbox_a1" value="a1" />a1</p>
+                  <p><input type="checkbox" name="grade_checkbox_a2" value="a2" />a2</p> -->
+          
+
+
+<!--           {{#if to_filter_age}}
+          <div class="row">
+              <label class="control-label col-sm-3 col-md-3"></label>
+            <div class="col-sm-5 col-md-5" ><input type="text" name="age_query" placeholder="Age" class="form-control" style="border-radius: 8px; height: 25px;
+            background-color: #a7fcd7;
+            box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+            border: solid 1px #979797;" /></div>
+            </div>
+            <p>lower age limit={{lower_age_limit}}</p>
+            <p>upper age limit={{upper_age_lmimt}}</p>
+          {{/if}} -->
+
+            <!-- <div class="row">
+                 <label class="control-label col-sm-3 col-md-3"></label>
+              <div class="col-sm-6 col-md-6" ><button type="button" class="btn btn-default" id="filter_btn" value="Filter">Filter</button>
+            </div>
+          </div> -->
+
+          {{/if}}
 
           <div class="row">
                  <label class="control-label col-sm-3 col-md-3" for="submit"></label>
-              <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit"/>
-              <!-- {#if skip_allow}}
-                <input type="button" name="skip" value="Skip" />
-              {{/if}}</div> -->
+              <div class="col-sm-6 col-md-6" ><input type="submit" class="btn btn-default" value="Submit" name="submit_btn"/>
             </div>
           </div>
         </form>
@@ -71,9 +97,16 @@
                                 name = {{name}}</h4>
                             <p class="group inner list-group-item-text">
                                 <span>grade = {{grade}}</span>
+                                
+                                {{#each map in price_map}}
+                                {{#with map}}
+                                <p><span>{{quantity}} kg : Rs. {{price}}</span></p>
+                                {{/with}}
+                                {{/each}}
+                                {{#if age}}
+                                <span>age = {{age}} month</span>
+                                {{/if}}
                                 </p>
-                                <!-- <span>price = {{price}}</span> -->
-                                <!-- <span>age = {{age}}</span></p> -->
                             <!-- <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <p class="lead">

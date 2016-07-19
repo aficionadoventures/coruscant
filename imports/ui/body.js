@@ -31,6 +31,9 @@ Template.search.onCreated(function() {
     // template.results = [{name : 'dum', category : 'dum', grade : 'duma', price : 'dum'}];
     template.results = new ReactiveVar([]);
     template.search_done = new ReactiveVar(false);
+    template.filter_age = new ReactiveVar(false);
+    template.min_age = new ReactiveVar(0);
+    template.max_age = new ReactiveVar(1);
 });
 
 Template.search.helpers({
@@ -45,7 +48,16 @@ Template.search.helpers({
     },
     results : function() {
         return Template.instance().results.get();
-    }
+    },
+    to_filter_age : function() {
+        return Template.instance().filter_age.get();
+    },
+    lower_age_limit : function() {
+        return Template.instance().min_age.get();
+    },
+    upper_age_limit : function() {
+        return Template.instance().max_age.get();
+    },
 });
 
 Template.search.events({
@@ -53,28 +65,31 @@ Template.search.events({
         event.preventDefault();
 
         var name_query = template.find('[name="name_query"]').value;
-        var sort_param = template.find('[id="sort_param"]').value;
-        var order;
-        var sort_order = {};
-            if (template.find('[id="order"]').value === 'ascending') {
-                order = 1;
-            } else {
-                order = -1;
-            }
-            if (sort_param === 'size') {
-                sort_order = {size : order};
-            } else if (sort_param === 'price') {
-                sort_order = {price : order};
-            } if (sort_param === 'age') {
-                sort_order = {age : order}
-            }
 
-        Meteor.call('search_name', { name: name_query, sort : sort_order}, {returnStubValue: true},
+        Meteor.call('search_name', { name: name_query }, {returnStubValue: true},
             (error, results) => {
                 template.search_done.set(true);
                 template.results.set(results);
+                for (i = 0; i < results.length; i++) {
+                    results[i].grade = results[i].params['grade'];
+                    if (results[i].params['age']) {
+                        template.filter_age.set(true);
+                        results[i].age = results[i].params['age'];
+                        if (results[i].params['age'] <= template.min_age.get()) {
+                            template.min_age.set(results[i].params['age']);
+                        }
+                        if (results[i].params['age'] >= template.max_age.get()) {
+                            template.max_age.set(results[i].params['age']);
+                        }
+                    }
+                }
         });
     },
+    // 'onclick #filter_btn' : function(event, template) {
+    //     event.preventDefault();
+    //     console.log("hello");
+    //     console.log(template.find('[name="grade_checkbox_a1"]').value);
+    // }
 });
 
 Template.login.events({
@@ -98,6 +113,7 @@ Template.login.events({
 Template.dashboard.onCreated(function() {
     let tmpl = Template.instance();
     tmpl.prod_lists = new ReactiveVar([]);
+    tmpl.name_vendor = new ReactiveVar("");
     
 });
 
@@ -112,9 +128,12 @@ Template.dashboard.events({
 
 Template.dashboard.helpers({
     vendor_name : function() {
-        return Meteor.user().name;
+        return Template.instance().name_vendor.get();
     },
     currentUser : function() {
+        Meteor.call('get_vendor_name', Meteor.userId(), {returnStubValue: true}, (error, results) => {
+            template.name_vendor.set(results);
+        });
         return Meteor.userId();
     },
     prods : function() {

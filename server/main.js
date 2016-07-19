@@ -67,10 +67,11 @@ Meteor.methods({
             results.push({
                 _id : doc._id,
                 name : doc.name,
-                price : doc.price,
+                price_map : doc.price_map,
                 params : doc.params,
             });
         });
+        console.log(results);
         return results;
     },
     'list_prods' : function(userId) {
@@ -88,6 +89,11 @@ Meteor.methods({
             });
         });
         return results;
+    },
+    'get_vendor_name' : function(userId) {
+        vendor_name = "";
+        Meteor.users.find({_id : userId}).forEach(function(doc) {vendor_name = doc.name });
+        return vendor_name;
     },
 });
 
