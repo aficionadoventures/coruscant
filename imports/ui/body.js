@@ -110,36 +110,36 @@ Template.login.events({
     },
 });
 
-Template.dashboard.onCreated(function() {
-    let tmpl = Template.instance();
-    tmpl.prod_lists = new ReactiveVar([]);
-    tmpl.name_vendor = new ReactiveVar("");
+// Template.dashboard.onCreated(function() {
+//     let tmpl = Template.instance();
+//     tmpl.prod_lists = new ReactiveVar([]);
+//     tmpl.name_vendor = new ReactiveVar("");
     
-});
+// });
 
-Template.dashboard.events({
-    'click #view_my_added' : function(event, template) {
-        event.preventDefault();
-        Meteor.call('list_prods', Meteor.userId(), {returnStubValue: true}, (error, results) => {
-            template.prod_lists.set(results);
-        });
-    },
-});
+// Template.dashboard.events({
+//     'click #view_my_added' : function(event, template) {
+//         event.preventDefault();
+//         Meteor.call('list_prods', Meteor.userId(), {returnStubValue: true}, (error, results) => {
+//             template.prod_lists.set(results);
+//         });
+//     },
+// });
 
-Template.dashboard.helpers({
-    vendor_name : function() {
-        return Template.instance().name_vendor.get();
-    },
-    currentUser : function() {
-        Meteor.call('get_vendor_name', Meteor.userId(), {returnStubValue: true}, (error, results) => {
-            template.name_vendor.set(results);
-        });
-        return Meteor.userId();
-    },
-    prods : function() {
-        return Template.instance().prod_lists.get();
-    }
-});
+// Template.dashboard.helpers({
+//     vendor_name : function() {
+//         return Template.instance().name_vendor.get();
+//     },
+//     currentUser : function() {
+//         Meteor.call('get_vendor_name', Meteor.userId(), {returnStubValue: true}, (error, results) => {
+//             template.name_vendor.set(results);
+//         });
+//         return Meteor.userId();
+//     },
+//     prods : function() {
+//         return Template.instance().prod_lists.get();
+//     }
+// });
 
 Template.navigation.events({
     'click .logout_control' : function(event) {
@@ -154,3 +154,4 @@ Template.navigation.helpers({
         return Meteor.userId();
     },
 });
+

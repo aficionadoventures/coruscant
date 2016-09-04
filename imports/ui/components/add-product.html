@@ -8,7 +8,15 @@
       <div class="col-sm-2 col-md-2"></div>
       <div class="col-sm-8 col-md-8">
         {{> newProduct}}
-        
+          <section name="product">
+            {{#if Template.subscriptionsReady}}
+              {{#each products}}
+                {{> Product}}
+              {{/each}}
+            {{else}}
+              <p>Loading</p>
+            {{/if}}
+          </section>
       </div>
       <div class="col-sm-2 col-md-2"></div>      
     </div>            
@@ -20,3 +28,16 @@
 <template name="newProduct">
 {{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form"}}
 </template>
+
+<template name="Product">
+  <article class="product">
+    <span>name = {{name}}</span>
+    <span>age={{age}}</span>
+    <span>size={{size}}</span>
+    <span>price={{price}}</span>
+    <span>grade={{grade}}</span>
+    <span>category={{category}}</span>
+  </article>
+
+</template>
+

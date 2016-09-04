@@ -7,6 +7,7 @@ import { Products } from '../imports/api/userdata.js'
 import '../imports/route/route.js';
 import '../imports/api/userdata.js';
 import './email_verification.js';
+import './publish.js';
 
 
 Meteor.startup(function () {

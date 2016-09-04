@@ -87,3 +87,14 @@ Router.route('/productViewUser', function () {
     }, {
     name: 'productViewUser'
 });
+
+// FlowRouter.route('/product/:id', {
+//     name: 'product-view',
+//     action() {
+//         Blazelayout.render('Mainlayout', {main: 'productView'});
+//     }
+// });
+
+
+
+
