@@ -21,6 +21,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 #insecure                # Allow all DB writes from clients (for prototyping)
 accounts-password
 twbs:bootstrap
+matb33:bootstrap-glyphicons
+matb33:bootstrap-base
 iron:router
 email
 pfafman:plivo
