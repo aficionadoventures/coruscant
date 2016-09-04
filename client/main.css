@@ -1,4 +1,5 @@
 /* CSS declarations go here */
+
 @font-face {
   font-family: SanFrancisco-Black;
   src: url('/font/SanFranciscoDisplay-Black.otf') format('opentype');
@@ -44,10 +45,20 @@
   src: url('/font/SanFranciscoDisplay-Ultralight.otf') format('opentype');
 }
 
-body, html {
-  font-family: SanFrancisco-Thin;
-  height: 100%;
+@font-face {
+  font-family: CircularStd-Book;
+  src: url('/font/CircularStd-Book.otf') format('opentype');
+}
 
+
+
+body, html {
+  font-family: CircularStd-Book;
+  height: 100%;
+}
+
+h1, h2, p, div, span, li, ul, h3, h4, form {
+  font-family: CircularStd-Book;
 }
 
 .Top-Black {
@@ -133,7 +144,7 @@ body, html {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
 }
- #row-container {
+#row-container {
 
  }
 
@@ -147,6 +158,4 @@ ul#menu li {
     display:inline;
 }
 
-h1, h2, p, div, span, li, ul, h3, h4, form {
-  font-family: SanFrancisco-Thin;
-}
+

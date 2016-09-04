@@ -1,0 +1,31 @@
+#row-container-login{
+  background-color: #fffaf0;
+  height: 100vh;;
+}
+
+#head-login{
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: center;
+  color: #6364d8;
+}
+
+#head2-login{
+  text-align: center;
+}
+
+#col-mid-login{
+  height: 67vh;
+  border-radius: 4px;
+  background-color: #f8cb00;
+  box-shadow: 0 16px 34px 7px rgba(121, 121, 121, 0.1);  
+}
+
+#login-forgot-password {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+    color: #585858;
+}

@@ -1,0 +1,47 @@
+
+.jumbotron-top {
+  height: 166px;
+  background-color: #f8cb00;
+  color: #f8cb00;
+
+}
+
+
+
+
+.jumbotron-head {
+  margin: 0px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 140%;
+  padding: 4%;
+  padding-top: 1%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;
+  font-family: SanFrancisco-Thin;
+}
+
+.jumbotron-head2 {
+  margin: 0px;
+  background-color: #1fb996;
+  font-family: SanFrancisco-Thin;
+  font-size: 200%;
+  padding-top: 3%;
+  padding-bottom: 8%;
+  padding-left: 4%;
+  padding-right: 4%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;  
+}
+
+.jumbotron-head3 {
+  margin: 0px;
+  font-family: SanFrancisco-Thin;
+  font-size: 200%;
+  padding-top: 3%;
+  padding-bottom: 8%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: rgba(48, 87, 132, 0.84);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px #979797;
