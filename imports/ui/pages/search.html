@@ -1,12 +1,137 @@
 
 <template name="search">
 
-  <div class="container-fluid">
-    <div class="row" id="row-container">
-      <div class="col-sm-2 col-md-2" id="col-left"></div>
+  <div class="jumbotron jumbotron-head-1">
+
+    <div class="col-sm-1 col-md-1"></div>
+    <div class="col-sm-2 col-md-2">
+      <span id="head-aficionado"><a href="/">Aficionado</a></span> 
+    </div>
+
+    <div class="col-sm-5 col-md-5">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-6 col-md-6">
+        <span id="head-location"><a href="#">&nbsp;&nbsp;Current City: New Delhi</a></span> 
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <span class="glyphicon glyphicon-earphone"></span>
+        <span id="head-contact-us"><a href="#">&nbsp;Let us call you!</a></span>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4">
+      <span id="head-left">
+        <ul>
+          <li id="head-list-left"><a href="#">FAQs&emsp;</a></li>
+          <li id="head-list-left"><a href="#">Blog &emsp;</a></li>
+          <li id="head-list-left"><a href="#">Dashboard &emsp;</a></li>
+          <li id="head-list-left"><a href="#">My Account &emsp;</a></li>
+        </ul>
+      </span>      
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-head-2">
+    <div class="col-sm-4 col-md-4"></div>
+    <div class="col-sm-6 col-md-6">
+      <input type="text" class="form-control" id="search-bar" placeholder="Search products by SKU or name" >
+    </div>
+    <div class="col-sm-2 col-md-2">
+      <button type="button" class="btn btn-warning btn-lg" id="head-cart-button">
+        <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;MY CART&nbsp; 
+        <span class="badge"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-navigation-1">
+    <div class="col-md-12" id="home-navigation-1">
+      <button class="col-md-4" id="home-navigation-1-button">
+        <p id="home-navigation-1-text"></p>
+      </button>
+      <button class="col-md-2" id="home-navigation-1-button">
+        <p id="home-navigation-1-text">Reverse Auction</p>
+      </button>
+      <button class="col-md-2" id="home-navigation-1-button">
+        <p id="home-navigation-1-text">Cart</p>
+      </button>
+      <button class="col-md-4" id="home-navigation-2-button">
+        <p>Search Results</p>
+      </button>
+    </div>            
+  </div>
     
-      <div class="col-sm-7 col-md-7" id="col-mid">
-     
+  <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <div class="row" id="search-product-display">
+          <div class="col-md-3">
+            <img src="image/potatoes.png" id="product-display-image">
+          </div>
+          <div class="col-md-3">
+            <p class="product-specs">Origin:
+              <span class="product-specs-content"> Nasik</span></p>
+            <p class="product-specs">Starch:
+              <span class="product-specs-content"> 63%</span></p>
+            <p class="product-specs">Age:
+              <span class="product-specs-content"> 6 days</span></p>
+            <p class="product-specs">Diameter:
+              <span class="product-specs-content"> 5cm</span></p>
+            <p class="product-specs">Delivery within:
+              <span class="product-specs-content"> 5 days</span></p>
+          </div>
+          <div class="col-md-3">
+            <p class="product-specs">Best Rates:
+              <span class="product-specs-content"> Nasik Potatoes Ltd.</span></p>
+            <p class="product-specs-2">Rs:
+              <span class="product-specs-content-2"> 6.3/kg</span></p>
+            <p class="product-specs">Order:
+              <span class="product-specs-content"> kg</span></p>
+            <button class="col-md-2" id="buy-now-button">
+              <p id="buy-now-button-text">Buy Now</p>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <p class="product-specs-3">Better Prices</p>
+            <p class="product-specs-3">Long Term Contracts</p>
+            <button class="col-md-2" id="buy-now-button">
+              <p id="buy-now-button-text">Invite Bids</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  class="main_menu_bg" style="">
+      <p class="ALL-CATEGORIES" style="">ALL CATEGORIES</p>
+      <p class="categoryItems" style="padding-top: 30px;">PANEER</p>
+      <p class="sub-category">&nbsp;&nbsp;Fresh</p>
+      <p class="sub-category">&nbsp;&nbsp;Frozen</p>
+      <p class="sub-category">&nbsp;&nbsp;Processed</p>
+      <p class="categoryItems">FISH</p>
+      <p class="categoryItems">ONION</p>
+      <p class="categoryItems">TOMATO</p>
+      <p class="categoryItems">POTATO</p>
+      <p class="categoryItems">SPICES</p>
+      <p class="categoryItems">BRANDS</p>
+      <p class="categoryItems">OILS</p>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
               <br>
         {{#if currentUser}}
           <h3>Hello {{vendor_name}}! What would you like to search today?</h3>
@@ -148,7 +273,7 @@
       
     {{/if}}
 </div> -->
-      </div>
+    
 
 <!-- 
 <div style="overflow: auto; height: 50vh;">
@@ -170,11 +295,6 @@
     {{/if}}
 </div>
  -->
-  
-              
-      <div class="col-sm-3 col-md-3" id="col-right"></div>
-    </div>
-  </div>
 
   
 

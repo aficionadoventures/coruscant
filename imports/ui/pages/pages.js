@@ -9,3 +9,4 @@ import './home.css';
 import './login.css';
 import './dashboard.css';
 import './register.css';
+import './search.css';
