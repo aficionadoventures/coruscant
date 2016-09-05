@@ -95,6 +95,12 @@ Router.route('/productViewUser', function () {
 //     }
 // });
 
+Router.route('/reverseauction', function () {
+    this.render('reverseAuction');
+}, {
+    name: 'reverseAuction'
+});
+
 
 
 
