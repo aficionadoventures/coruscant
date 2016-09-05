@@ -81,47 +81,49 @@
   line-height: 2.21;
   color: #ffffff;
 }
-.cartCounter {
-  width: 49px;
-  height: 50px;
-  border-radius: 4px;
-  background-color: #f56823;
+
+.jumbotron-navigation-1 {
+  padding: 0%;
+  border: 0px:;
+
 }
-.cartCounter span {
-  position: relative;
-  top:9px;
-  left:9px;
-  width: 14px;
-  height: 31px;
-  font-family: CircularStd;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.21;
-  color: #ffffff;
+
+#home-navigation-1 {
+  background-color: #fcea99;
+  margin:0px;
+  padding: 0%;
+  border: 0px:;
 }
-.Oval-43 {
-  width: 1.6px;
-  height: 1.6px;
-  background-color: rgba(NaN, NaN, NaN, 0);
-  border: solid 2px #ffffff;
+
+#home-navigation-1-button {
+  border: none;
+  background-color: #fcea99;
 }
-#Reverse-Auction-Cart {
-  width: 472.1px;
-  height: 31px;
+
+
+#home-navigation-1-text {
   font-family: CircularStd-Book;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.94;
   text-align: center;
+  padding-top: 5%;
   color: #9b9b9b;
 }
-#Browse {
-  width: 538.9px;
-  height: 30px;
+
+/*#home-navigation-2-text {
+  font-family: CircularStd-Book;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: center;
+  padding-top: 5%;
+  color: #fcea99;
+}*/
+
+#home-navigation-2-button {
   font-family: CircularStd;
   font-size: 24px;
   font-weight: bold;
@@ -129,7 +131,10 @@
   font-stretch: normal;
   text-align: center;
   color: #6364d8;
+  border: none; 
+  background-color: #f8cb00;
 }
+
 .main_menu_bg {
   width: 285px;
   height: 580px;
