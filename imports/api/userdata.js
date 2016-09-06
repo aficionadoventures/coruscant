@@ -1,6 +1,6 @@
 Products = new Mongo.Collection('products');
 
-// export { Products };
+export { Products };
 
 Products.allow({
     insert: function(userId, doc) {

@@ -1,4 +1,5 @@
 import './body.html';
+import './pages/search.html';
 import './pages/pages.js';
 import './components/components.js';
 
@@ -38,7 +39,7 @@ Template.search.onCreated(function() {
 
 Template.search.helpers({
     vendor_name : function() {
-        return Meteor.user().name; 
+        return Meteor.user().name;
     },
     currentUser : function() {
         return Meteor.userId();
@@ -61,10 +62,10 @@ Template.search.helpers({
 });
 
 Template.search.events({
-    'submit form' : function(event, template) {
+    'submit .search_input' : function(event, template) {
         event.preventDefault();
 
-        var name_query = template.find('[name="name_query"]').value;
+        var name_query = $('[name="name_query"]').val();
 
         Meteor.call('search_name', { name: name_query }, {returnStubValue: true},
             (error, results) => {
