@@ -35,6 +35,7 @@ Template.search.onCreated(function() {
     template.filter_age = new ReactiveVar(false);
     template.min_age = new ReactiveVar(0);
     template.max_age = new ReactiveVar(1);
+    template.number_results = new ReactiveVar(0);
 });
 
 Template.search.helpers({
@@ -59,6 +60,14 @@ Template.search.helpers({
     upper_age_limit : function() {
         return Template.instance().max_age.get();
     },
+    results_number : function() {
+        var num = Template.instance().number_results.get();
+        if (num == 0) {
+            return "No results found in the database";
+        } else {
+            return "Found " + num + " results in the database";
+        }
+    },
 });
 
 Template.search.events({
@@ -71,19 +80,20 @@ Template.search.events({
             (error, results) => {
                 template.search_done.set(true);
                 template.results.set(results);
-                for (i = 0; i < results.length; i++) {
-                    results[i].grade = results[i].params['grade'];
-                    if (results[i].params['age']) {
-                        template.filter_age.set(true);
-                        results[i].age = results[i].params['age'];
-                        if (results[i].params['age'] <= template.min_age.get()) {
-                            template.min_age.set(results[i].params['age']);
-                        }
-                        if (results[i].params['age'] >= template.max_age.get()) {
-                            template.max_age.set(results[i].params['age']);
-                        }
-                    }
-                }
+                template.number_results.set(results.length);
+                // for (i = 0; i < results.length; i++) {
+                //     results[i].grade = results[i].params['grade'];
+                //     if (results[i].params['age']) {
+                //         template.filter_age.set(true);
+                //         results[i].age = results[i].params['age'];
+                //         if (results[i].params['age'] <= template.min_age.get()) {
+                //             template.min_age.set(results[i].params['age']);
+                //         }
+                //         if (results[i].params['age'] >= template.max_age.get()) {
+                //             template.max_age.set(results[i].params['age']);
+                //         }
+                //     }
+                // }
         });
     },
     // 'onclick #filter_btn' : function(event, template) {

@@ -51,26 +51,29 @@ Meteor.methods({
         }
         name = name.trim();
 
-        // var search_array = [];
-        // for (i = 0; i < split_sort_array.length; i++) {
-        //     search_array.push({$text : { $search : split_sort_array[i].trim() }});
-        // }
         console.log(name);
         Products.find({
-            // $and: search_array,
                 $text : {
                     $search: name,
-                    // $caseSensitive: false,
-                    //   $diacriticSensitive: false,
                 }
             },
         ).forEach(function(doc) {
-            results.push({
+            tmp = {
+                // example SKU from products collection -
+                // { "_id" : "06daf01f6d6d", "category" : "Less iodine",
+                // "name" : "Salt", "brand" : "Tata Lite", "packaging" : "Plastic 10 micron",
+                // "meta" : "10 10 iodine kg less lite micron namak plastic salt tata" }
                 _id : doc._id,
+                category : doc.category,
+                brand : doc.brand,
                 name : doc.name,
-                price_map : doc.price_map,
-                params : doc.params,
+                packaging : doc.packaging,
+            };
+            Meteor.users.find({_id : doc.vendor}).forEach(function(other_doc) {
+                tmp.vendor = other_doc.name;
+                tmp.origin = other_doc.location.city;
             });
+            results.push(tmp);
         });
         console.log(results);
         return results;
