@@ -278,6 +278,14 @@ body,html{
   padding-top: 10%;
 }
 
+.view-display-button {
+  width: 100%;
+  background-color: white;
+  color: #6364d8;
+  border: 0px;
+  font-size: 14px
+}
+
 .product-specs{
   font-family: CircularStd;
   font-size: 14px;
