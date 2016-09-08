@@ -68,6 +68,8 @@ Meteor.methods({
                 brand : doc.brand,
                 name : doc.name,
                 packaging : doc.packaging,
+                img : doc.img,
+                price : Math.floor(doc.price) + (Math.floor((doc.price - Math.floor(doc.price)) * 100) / 100)
             };
             Meteor.users.find({_id : doc.vendor}).forEach(function(other_doc) {
                 tmp.vendor = other_doc.name;

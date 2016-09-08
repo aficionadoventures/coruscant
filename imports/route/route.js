@@ -23,11 +23,11 @@ Router.route('/search', function () {
     name: 'search'
 });
 
-Router.route('/dashboard', function () {
-    this.render('dashboard');
-}, {
-    name: 'dashboard'
-});
+// Router.route('/dashboard', function () {
+//     this.render('dashboard');
+// }, {
+//     name: 'dashboard'
+// });
 
 Router.route('/upload', function () {
 	this.render('upload');
@@ -101,4 +101,8 @@ Router.route('/reverseauction', function () {
     name: 'reverseAuction'
 });
 
-
+// Router.route('/dashboard', function() {
+//   Router.go("https://rito.tech/dash_2/[TEST]%20Aficionado%20Ventures.html");
+// }, {
+//     name : 'dashboard'
+// });

@@ -27,6 +27,20 @@ Template.upload.events({
     },
 });
 
+// Template.buy_now.onCreated(function() {
+//     let template = Template.instance();
+//     template.info = new ReactiveVar("");
+// });
+
+// Template.buy_now.helpers();
+
+// Template.buy_now.event({
+//     'click buy_now_btn' : function(event, template) {
+//         event.preventDefault();
+//         console.log($('[name="id_info"]').val());
+//     },
+// });
+
 Template.search.onCreated(function() {
     let template = Template.instance();
     // template.results = [{name : 'dum', category : 'dum', grade : 'duma', price : 'dum'}];
@@ -101,6 +115,10 @@ Template.search.events({
     //     console.log("hello");
     //     console.log(template.find('[name="grade_checkbox_a1"]').value);
     // }
+    'click #buy-now-button-1' : function(event, template) {
+        event.preventDefault();
+        console.log($(event.target).data('id'));
+    },
 });
 
 Template.login.events({
