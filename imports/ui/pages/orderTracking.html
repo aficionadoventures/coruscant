@@ -1,0 +1,284 @@
+<template name="orderTracking">
+
+  <div class="jumbotron jumbotron-head-1">
+
+    <div class="col-sm-1 col-md-1"></div>
+    <div class="col-sm-2 col-md-2">
+      <span id="head-aficionado"><a style="text-decoration:none;" href="/">Aficionado</a></span> 
+    </div>
+
+    <div class="col-sm-5 col-md-5">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-6 col-md-6">
+        <span id="head-location"><a style="text-decoration:none;" href="#">Current City: New Delhi</a></span> 
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <span class="glyphicon glyphicon-earphone"></span>
+        <span id="head-contact-us"><a style="text-decoration:none;" href="#">Let us call you!</a></span>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4">
+      <span id="head-left">
+        <ul>
+          <li id="head-list-left"><a href="#" style="text-decoration:none;">FAQs</a>&emsp;</li>
+          <li id="head-list-left"><a href="#" style="text-decoration:none;">Blog</a>&emsp;</li>
+          <li id="head-list-left"><a href="#" style="text-decoration:none;">Dashboard</a>&emsp;</li>
+          <li id="head-list-left"><a href="#" style="text-decoration:none;">My Account</a></li>
+        </ul>
+      </span>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-head-2">
+    <div class="col-sm-4 col-md-4"></div>
+    <div class="col-sm-6 col-md-6">
+    <form class="search_input">
+      <div class="input-group">
+        <input type="text" class="form-control" id="search-bar" name="name_query" placeholder="Search products by SKU or name" >
+        <span class="input-group-btn">
+          <button class="btn btn-secondary btn-lg" type="submit" value="Submit" name="submit_btn">
+            <span class="glyphicon glyphicon-search"></span>    
+          </button>
+        </span>
+      </div>
+      </form>
+    </div>
+    <div class="col-sm-2 col-md-2">
+      <button id="head-cart-button" class="btn btn-warning btn-lg">
+        <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;MY CART&nbsp; 
+        <span class="badge"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-navigation-1">
+    <div class="col-md-12" id="home-navigation-1">
+      <button class="col-md-4" id="home-navigation-1-button">
+        <p id="home-navigation-1-text"></p>
+      </button>
+      <button class="col-md-2" id="home-navigation-1-button">
+        <p id="home-navigation-1-text">Reverse Auction</p>
+      </button>
+      <button class="col-md-2" id="home-navigation-1-button">
+        <p id="home-navigation-1-text">Cart</p>
+      </button>
+      <button class="col-md-4" id="home-navigation-2-button">
+        <p>Order Tracking</p>
+      </button>
+    </div>            
+  </div>
+
+    <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <div class="row" id="reverseauction-head-1">
+          <span class="search-filter-head">Current Orders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <br>
+        <div class="row" id="track-product-display">
+          <div class="col-md-3">
+            <img src="image/potatoes.png" id="product-display-image">
+            <button id="viewDetail" class="col-md-2 view-display-button">
+            </button>
+          </div>
+          <div class="col-md-2">
+            <br>
+            <p class="product-specs">Origin:
+              <span class="product-specs-content"> Nasik</span></p>
+            <p class="product-specs">Starch:
+              <span class="product-specs-content"> 63%</span></p>
+            <p class="product-specs">Age:
+              <span class="product-specs-content"> 6 days</span></p>
+            <p class="product-specs">Diameter:
+              <span class="product-specs-content"> 5cm</span></p>
+
+          </div>
+          <div class="col-md-3">
+            <br>
+            <p class="product-specs-2">Price Per Unit:
+              <p class="product-specs-content-2">Rs 6.3/kg</p></p>
+            <p class="product-specs-2">Vendor:
+              <p class="product-specs-content-2">Nasik potatoes</p></p>
+          </div>
+          <div class="col-md-4" id="product-display-box-4">
+            <br>
+            <div class ="row">
+            <div class ="col-md-7">
+            <p class="product-specs-3">Shipment:</p>
+            <p class="product-specs-3">Payment:
+            </p>
+            </div>
+            <div class ="col-md-5">
+              <p class="product-tracking-content-2">  Shipped</p>
+              <p class="product-tracking-content-2">  Due</p>
+            </div>
+            </div>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Issues?</p>
+            </button>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Leave Feedback</p>           
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <br>
+        <div class="row" id="track-product-display">
+          <div class="col-md-3">
+            <img src="image/potatoes.png" id="product-display-image">
+            <button id="viewDetail" class="col-md-2 view-display-button">
+            </button>
+          </div>
+          <div class="col-md-2">
+            <br>
+            <p class="product-specs">Origin:
+              <span class="product-specs-content"> Nasik</span></p>
+            <p class="product-specs">Starch:
+              <span class="product-specs-content"> 63%</span></p>
+            <p class="product-specs">Age:
+              <span class="product-specs-content"> 6 days</span></p>
+            <p class="product-specs">Diameter:
+              <span class="product-specs-content"> 5cm</span></p>
+
+          </div>
+          <div class="col-md-3">
+            <br>
+            <p class="product-specs-2">Price Per Unit:
+              <p class="product-specs-content-2">Rs 6.3/kg</p></p>
+            <p class="product-specs-2">Vendor:
+              <p class="product-specs-content-2">Nasik potatoes</p></p>
+          </div>
+          <div class="col-md-4" id="product-display-box-4">
+            <br>
+            <div class ="row">
+            <div class ="col-md-7">
+            <p class="product-specs-3">Shipment:</p>
+            <p class="product-specs-3">Payment:
+            </p>
+            </div>
+            <div class ="col-md-5">
+              <p class="product-tracking-content-2">  Shipped</p>
+              <p class="product-tracking-content-2">  Due</p>
+            </div>
+            </div>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Issues?</p>
+            </button>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Leave Feedback</p>           
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <div class="row" id="reverseauction-head-1">
+          <span class="search-filter-head">Past Orders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fliud">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <br>
+        <div class="row" id="track-product-display">
+          <div class="col-md-3">
+            <img src="image/potatoes.png" id="product-display-image">
+            <button id="viewDetail" class="col-md-2 view-display-button">
+            </button>
+          </div>
+          <div class="col-md-2">
+            <br>
+            <p class="product-specs">Origin:
+              <span class="product-specs-content"> Nasik</span></p>
+            <p class="product-specs">Starch:
+              <span class="product-specs-content"> 63%</span></p>
+            <p class="product-specs">Age:
+              <span class="product-specs-content"> 6 days</span></p>
+            <p class="product-specs">Diameter:
+              <span class="product-specs-content"> 5cm</span></p>
+
+          </div>
+          <div class="col-md-3">
+            <br>
+            <p class="product-specs-2">Price Per Unit:
+              <p class="product-specs-content-2">Rs 6.3/kg</p></p>
+            <p class="product-specs-2">Vendor:
+              <p class="product-specs-content-2">Nasik potatoes</p></p>
+          </div>
+          <div class="col-md-4" id="product-display-box-4">
+            <br>
+            <div class ="row">
+            <div class ="col-md-7">
+            <p class="product-specs-3">Shipment:</p>
+            <p class="product-specs-3">Payment:
+            </p>
+            </div>
+            <div class ="col-md-5">
+              <p class="product-tracking-content-2">  Delivered</p>
+              <p class="product-tracking-content-2">  Paid</p>
+            </div>
+            </div>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Issues?</p>
+            </button>
+            <button class="col-md-2" id="buy-now-button-2">
+              <p id="buy-now-button-text">Leave Feedback</p>           
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  class="main_menu_bg" style="">
+      <p class="ALL-CATEGORIES" style="">ALL CATEGORIES</p>
+      <p class="categoryItems" style="padding-top: 30px;">PANEER</p>
+      <p class="sub-category">&nbsp;&nbsp;Fresh</p>
+      <p class="sub-category">&nbsp;&nbsp;Frozen</p>
+      <p class="sub-category">&nbsp;&nbsp;Processed</p>
+      <p class="categoryItems">FISH</p>
+      <p class="categoryItems">ONION</p>
+      <p class="categoryItems">TOMATO</p>
+      <p class="categoryItems">POTATO</p>
+      <p class="categoryItems">SPICES</p>
+      <p class="categoryItems">BRANDS</p>
+      <p class="categoryItems">OILS</p>
+  </div>
+
+</template>

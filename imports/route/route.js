@@ -101,4 +101,8 @@ Router.route('/reverseauction', function () {
     name: 'reverseAuction'
 });
 
-
+Router.route('/orderTracking', function () {
+    this.render('orderTracking');
+}, {
+    name: 'orderTracking'
+});
