@@ -106,3 +106,9 @@ Router.route('/orderTracking', function () {
 }, {
     name: 'orderTracking'
 });
+
+Router.route('/catalogue', function () {
+    this.render('catalogue');
+}, {
+    name: 'catalogue'
+});
