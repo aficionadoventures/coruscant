@@ -8,6 +8,8 @@ import './reverseauction.html';
 import './productDetail.html';
 import './cart.html';
 import './orderTracking.html';
+import './catalogue.html';
+import './addProduct.html';
 
 import './home.css';
 import './login.css';
@@ -17,7 +19,8 @@ import './search.css';
 import './reverseauction.css';
 import './cart.css';
 import './orderTracking.css';
-
+import './catalogue.css';
+import './addProduct.css';
 
 Template.search.events({
   'click #viewDetail': function(e) {
@@ -40,4 +43,12 @@ Template.cart.events({
 		event.preventDefault();
 		Router.go('/orderTracking');
 	}
+});
+
+Template.catalogue.events({
+  'click #viewDetail': function(e) {
+    e.preventDefault();
+
+    Modal.show('addProduct');
+  }
 });
