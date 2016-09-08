@@ -6,6 +6,7 @@ import './register.html';
 import './search.html';
 import './reverseauction.html';
 import './productDetail.html'
+import './cart.html'
 
 import './home.css';
 import './login.css';
@@ -13,10 +14,27 @@ import './dashboard.css';
 import './register.css';
 import './search.css';
 import './reverseauction.css';
+import './cart.css'
 
 
 Template.search.events({
   'click #viewDetail': function(e) {
+    e.preventDefault();
+
+    Modal.show('productDetail');
+  }
+});
+
+Template.search.events({
+  'click #head-cart-button': function(e) {
+    e.preventDefault();
+
+    Modal.show('cart');
+  }
+});
+
+Template.cart.events({
+  'click #buy-now-button-2': function(e) {
     e.preventDefault();
 
     Modal.show('productDetail');
