@@ -1,0 +1,131 @@
+ #cart-container {
+ 	background-color: white;
+ 	padding:0%;
+ }
+
+ #cart-head {
+  font-family: CircularStd;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: center;
+  color: #6364d8;
+  border: none; 
+  background-color: #f8cb00;
+  width: 100%;
+  margin:0px;
+  padding:0px;
+}
+
+#cart-head-content {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  width:100%;
+}
+
+#cart-head-content-text {
+  font-family: CircularStd;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #9b9b9b;
+  text-align: center;
+}
+
+#cart-product-display-container {
+  background-color: #ffffff;
+  padding: 0%;
+  margin: 2%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  display: inline-grid;
+}
+
+#cart-product-display-image {
+  height: 15vh;
+  width: 10vw;
+  align-content: center;
+}
+
+.cart-product-specs {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #6364d8;
+}
+
+.cart-product-specs-content {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #9b9b9b;
+}
+
+.cart-product-specs-2 {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #9b9b9b;
+}
+
+.cart-product-specs-content-2 {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #6364d8;
+}
+
+#cart-product-display-3 {
+  background-color: #f8cb00;
+  width: 100%;
+  margin: 0px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.cart-total-1 {
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: bold
+  font-style: normal;
+  font-stretch: normal;
+  color: #ffffff;
+  padding-left: 30vw;
+}
+
+.cart-total-2 {
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #f56823;
+  float: right;
+  padding-right: 2vw;
+}
+
+#cart-product-display-4 {
+  margin: 0px;
+}
+
+#Checkout-button {
+  background-color: #f5a623;
+  width: 100%;
+}
+
+.Checkout-button-text {
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  color: #ffffff;
+  float: right;
+  padding-right: 2vw;
+}
