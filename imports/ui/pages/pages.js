@@ -34,3 +34,10 @@ Template.search.events({
     Modal.show('cart');
   }
 });
+
+Template.cart.events({
+	'click .checkout_button' : function(event, template) {
+		event.preventDefault();
+		Router.go('/orderTracking');
+	}
+});
