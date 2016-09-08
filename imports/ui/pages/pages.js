@@ -5,8 +5,9 @@ import './page-not-found.html';
 import './register.html';
 import './search.html';
 import './reverseauction.html';
-import './productDetail.html'
-import './cart.html'
+import './productDetail.html';
+import './cart.html';
+import './orderTracking.html';
 
 import './home.css';
 import './login.css';
@@ -14,7 +15,8 @@ import './dashboard.css';
 import './register.css';
 import './search.css';
 import './reverseauction.css';
-import './cart.css'
+import './cart.css';
+import './orderTracking.css';
 
 
 Template.search.events({
@@ -30,13 +32,5 @@ Template.search.events({
     e.preventDefault();
 
     Modal.show('cart');
-  }
-});
-
-Template.cart.events({
-  'click #buy-now-button-2': function(e) {
-    e.preventDefault();
-
-    Modal.show('productDetail');
   }
 });

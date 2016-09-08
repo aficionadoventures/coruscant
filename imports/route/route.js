@@ -101,8 +101,8 @@ Router.route('/reverseauction', function () {
     name: 'reverseAuction'
 });
 
-// Router.route('/dashboard', function() {
-//   Router.go("https://rito.tech/dash_2/[TEST]%20Aficionado%20Ventures.html");
-// }, {
-//     name : 'dashboard'
-// });
+Router.route('/orderTracking', function () {
+    this.render('orderTracking');
+}, {
+    name: 'orderTracking'
+});
