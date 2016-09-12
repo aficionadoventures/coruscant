@@ -12,19 +12,19 @@ Router.route('/register', function () {
 });
 
 Router.route('/login', function () {
-    this.render('login');
+	this.render('login');
 }, {
-    name: 'login'
+	name: 'login'
 });
 
 Router.route('/verify-email/:token', function() {
-    let token = this.params.token;
-    console.log(token);
-    Accounts.verifyEmail(token, (error) => {
-        if (error) {
-            console.log('Error in verifying email');
-        } else {
-            console.log('Email verified');
-        }
-    });
+	let token = this.params.token;
+	console.log(token);
+	Accounts.verifyEmail(token, (error) => {
+		if (error) {
+			console.log('Error in verifying email');
+		} else {
+			console.log('Email verified');
+		}
+	});
 });

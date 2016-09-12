@@ -7,5 +7,5 @@ Router.configure({
 });
 
 Router.configure({
-    notFoundTemplate: 'not_found'
+	notFoundTemplate: 'not_found'
 });

@@ -5,14 +5,14 @@ import { Accounts } from 'meteor/accounts-base';
 import './register.html';
 
 Template.register.onCreated(function() {
-    // TODO(hatim)
-    let template = Template.instance();
+	// TODO(hatim)
+	let template = Template.instance();
 });
 
 Template.register.events({
-    // TODO(hatim)
+	// TODO(hatim)
 });
 
 Template.register.helpers({
-    // TODO(hatim)
+	// TODO(hatim)
 });
