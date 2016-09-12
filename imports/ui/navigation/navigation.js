@@ -5,15 +5,23 @@ import { Accounts } from 'meteor/accounts-base';
 import './navigation.html';
 
 Template.navigation.events({
-	'click .logout_control' : function(event) {
+	'submit [data-id="searchForm"]' : function(event, template) {
 		event.preventDefault();
-		Meteor.logout();
-		Router.go('http://aficionadoventures.com');
-	}
+
+		let tmp = $('[name="searchInput"]').val();
+		if (tmp) {
+			let query = '';
+			tmp = tmp.split(' ').sort();
+			for (let i = 0; i < tmp.length; i++) {
+				query = query + '"' + tmp[i].trim() + '" ';
+			}
+			query = query.trim();
+
+			Router.go('/search?q=' + query);
+		}
+	},
 });
 
 Template.navigation.helpers({
-	currentUser : function() {
-		return Meteor.userId();
-	},
+	// TODO(hatim)
 });

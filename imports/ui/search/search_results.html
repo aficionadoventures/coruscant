@@ -1,88 +1,88 @@
 <template name="search_results">
-	<div class="container">
-		<div id="products" class="row list-group">
-			{{#if search_complete}}
+
+<div class="container">
+	<div id="products" class="row list-group">
+		<div class="container-fliud">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+					<div class="row" id="search-filters-1">
+						<span class="search-filter-head">{{ n_results }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ #each result in results }}
+			{{ #with result }}
 				<div class="container-fliud">
 					<div class="col-md-2"></div>
 					<div class="col-md-10">
 						<div class="col-md-2"></div>
 						<div class="col-md-10">
-							<div class="row" id="search-filters-1">
-								<span class="search-filter-head">{{results_number}}</span>
+							<br>
+							<div class="row" id="search-product-display">
+								<div class="col-md-3">
+									<img src="{{ img }}" id="product-display-image" style="max-height : 100%; max-width : 100%;">
+									<button id="viewDetail" class="col-md-2 view-display-button">
+										<p id="product-specs-content">View Details</p>
+									</button>
+								</div>
+								<div class="col-md-3">
+									<div class="row" id="search-filters-1">
+										<span class="search-filter-head">{{ name }}</span>
+									</div>
+									<br>
+									<p class="product-specs">Brand:
+										<span class="product-specs-content"> {{ brand }}</span>
+									</p>
+									<p class="product-specs">Category:
+										<span class="product-specs-content"> {{ category }}</span>
+									</p>
+									<p class="product-specs">Packaging:
+										<span class="product-specs-content"> {{ packaging }}</span>
+									</p>
+									<p class="product-specs">Origin:
+										<span class="product-specs-content"> {{ origin }}</span>
+									</p>
+									<p class="product-specs">Delivery within:
+										<span class="product-specs-content"> 5 days</span>
+									</p>
+								</div>
+								<div class="col-md-4">
+									<br>
+									<p class="product-specs">Best Rates:
+										<span class="product-specs-content"> {{ vendor }}</span>
+									</p>
+									<p class="product-specs-2">Rs:
+										<span class="product-specs-content-2"> {{ price }} / unit</span>
+									</p>
+									<p class="product-specs">Order:
+										<span class="product-quantity-input">
+											<input type="number" name="quantity" id="product-quantity-input-box" min="1">
+										</span>
+										<span class="product-specs-content"> units</span>
+									</p>
+									<button class="col-md-2" id="buy-now-button-1" {{ buy_btn_attributes }} name="buy_now_btn">
+										<p id="buy-now-button-text">Buy Now</p>
+									</button>
+								</div>
+								<div class="col-md-2" id="product-display-box-4">
+									<br>
+									<p class="product-specs-3">Better Prices?</p>
+									<p class="product-specs-3">Long-Term Contracts?</p>
+									<p></p>
+									<button class="col-md-2" id="buy-now-button-2">
+										<p id="buy-now-button-text">Invite Bids</p>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				{{#each result in results}}
-					{{#with result}}
-						<div class="container-fliud">
-							<div class="col-md-2"></div>
-							<div class="col-md-10">
-								<div class="col-md-2"></div>
-								<div class="col-md-10">
-									<br>
-									<div class="row" id="search-product-display">
-										<div class="col-md-3">
-											<img src="{{img}}" id="product-display-image" style="max-height : 100%; max-width : 100%;">
-											<button id="viewDetail" class="col-md-2 view-display-button">
-												<p id="product-specs-content">View Details</p>
-											</button>
-										</div>
-										<div class="col-md-3">
-											<div class="row" id="search-filters-1">
-												<span class="search-filter-head">{{name}}</span>
-											</div>
-											<br>
-											<p class="product-specs">Brand:
-												<span class="product-specs-content"> {{brand}}</span>
-											</p>
-											<p class="product-specs">Category:
-												<span class="product-specs-content"> {{category}}</span>
-											</p>
-											<p class="product-specs">Packaging:
-												<span class="product-specs-content"> {{packaging}}</span>
-											</p>
-											<p class="product-specs">Origin:
-												<span class="product-specs-content"> {{origin}}</span>
-											</p>
-											<p class="product-specs">Delivery within:
-												<span class="product-specs-content"> 5 days</span>
-											</p>
-										</div>
-										<div class="col-md-4">
-											<br>
-											<p class="product-specs">Best Rates:
-												<span class="product-specs-content"> {{vendor}}</span>
-											</p>
-											<p class="product-specs-2">Rs:
-												<span class="product-specs-content-2"> {{price}} / unit</span>
-											</p>
-											<p class="product-specs">Order:
-												<span class="product-quantity-input">
-													<input type="number" name="quantity" id="product-quantity-input-box" min="1">
-												</span>
-												<span class="product-specs-content"> units</span>
-											</p>
-											<button class="col-md-2" id="buy-now-button-1" data-id='{{_id}}' name="buy_now_btn">
-												<p id="buy-now-button-text">Buy Now</p>
-											</button>
-										</div>
-										<div class="col-md-2" id="product-display-box-4">
-											<br>
-											<p class="product-specs-3">Better Prices?</p>
-											<p class="product-specs-3">Long-Term Contracts?</p>
-											<p></p>
-											<button class="col-md-2" id="buy-now-button-2">
-												<p id="buy-now-button-text">Invite Bids</p>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					{{/with}}
-				{{/each}}
-			{{/if}}
-		</div>
+			{{ /with }}
+		{{ /each }}
 	</div>
+</div>
+
 </template>

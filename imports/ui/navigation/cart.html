@@ -1,0 +1,87 @@
+<template name="cart">
+
+<!-- Cart modal begins -->
+	<div class="modal right fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header row-centered">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel2">My Cart</h4>
+				</div>
+
+				<div class="modal-body row-centered">
+					<div class="row prouct-details-rito-cart">
+						<p class="prod-desc-heading-static">All Prices Include Shipping and Taxes</p>
+					</div>
+
+					<!-- Cart entry begins -->
+						<div class="row product-details-rito">
+						<!-- Each entry in the cart has two rows.-->
+							<!-- First row -->
+								<div class="row prouct-details-rito">
+									<div class="col-md-3">
+										<div class = "image"> <!-- Needs Dynamic -->
+											<img src = "/img/food.png" class="img-responsive image1">
+										</div>
+									</div>
+
+									<div class="col-md-2">
+										<p class="prod-desc-heading-small">Price</p><!-- Needs Dynamic -->
+										<p class="prod-desc-text-small"><span class="fa fa-inr"></span>6.50/kg</p>
+									</div>
+
+									<div class="col-md-2"><!-- Needs Dynamic -->
+										<p class="prod-desc-heading-small">Quantity</p>
+										<p class="prod-desc-text-small">50 kg</p>
+									</div>
+
+									<div class="col-md-2">
+										<p class="prod-desc-heading-small">Total</p><!-- Needs Dynamic -->
+										<p class="prod-desc-text-small"><span class="fa fa-inr"></span>325</p>
+									</div>
+
+									<div class="col-md-3"><!-- Needs Link-->
+										<button class="btn btn-default btn-sm btn-template-main"><i class="fa fa-pencil"></i> Edit</button>
+									</div>
+								</div>
+							<!-- First row ends -->
+
+							<!-- Second row -->
+								<div class="row product-details-rito-cart row-centered">
+									<div class="col-md-1 col-centered">
+										<p class="prod-desc-text-small">SKU:</p>
+									</div>
+									<div class="col-md-3 col-centered"><!-- Needs Dynamic -->
+										<p class="prod-desc-text-small"> Fresh Potato</p>
+									</div>
+									<div class="col-md-2 col-centered">
+										<p class="prod-desc-text-small">Sold By:</p>
+									</div>
+									<div class="col-md-6 col-centered"><!-- Needs Dynamic -->
+										<p class="prod-desc-text-small">Nasik Potatoes Ltd.</p>
+									</div>
+								</div>
+							<!-- Second row ends -->
+
+						</div>
+						<br>
+					<!-- Cart entry ends -->
+
+					<br>
+					<div class="row row-centered">
+						<div class="col-md-12">
+							<a href="#" class="btn btn-lg btn-details"><span class="fa fa-send-o"></span> Check Out</a> <!-- Needs Link -->
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+<!-- Cart ends -->
+
+</template>
