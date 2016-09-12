@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "CircularStd-Book";
+    src: url('/css/fonts/CircularStd-Book.otf');
+}
+
+@font-face {
+    font-family: "CircularStd-Bold";
+    src: url('/css/fonts/CircularStd-Bold.otf');
+}
+
 .col-centered {
     display:inline-block;
     float:none;

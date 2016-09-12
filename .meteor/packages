@@ -20,9 +20,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 #autopublish             # Publish all data to the clients (for prototyping)
 #insecure                # Allow all DB writes from clients (for prototyping)
 accounts-password
-twbs:bootstrap
-matb33:bootstrap-glyphicons
-matb33:bootstrap-base
 iron:router
 email
 pfafman:plivo
@@ -32,4 +29,3 @@ accounts-ui
 aldeed:collection2
 aldeed:autoform
 meteortoys:allthings
-peppelg:bootstrap-3-modal
