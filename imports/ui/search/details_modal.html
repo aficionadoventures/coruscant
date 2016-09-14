@@ -1,0 +1,129 @@
+<template name="details_modal">
+
+<div id="modalDetails" class="modal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title row-centered">Detailed View</h4>
+			</div>
+
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-5">
+						<div class="row row-centered">
+							<div class = "image">
+								{{ #if img }}
+									<img src = "{{ img }}" class="img-responsive image1">
+								{{ else }}
+									<img src = "/img/food.png" class="img-responsive image1">
+								{{ /if }}
+							</div>
+						</div>
+
+						<div class="row row-centered">
+							<div class="col-md-12 col-centered">
+								<p class="prod-desc-heading-static" style="display:inline">Sold by: </p>
+								<p class="prod-desc-text" style="display:inline">{{ vendor }}</p>
+								<br>
+
+								<p class="prod-desc-heading-static" style="display:inline">Brand: </p>
+								<p class="prod-desc-text" style="display:inline">{{ brand }}</p>
+								<br>
+
+								<p class="prod-desc-heading-static" style="display:inline">Packaging: </p>
+								<p class="prod-desc-text" style="display:inline">{{ packaging }}</p>
+								<br>
+
+								<p class="prod-desc-heading-static" style="display:inline">Delivery: </p>
+								<p class="prod-desc-text" style="display:inline">14th September</p>
+								<br>
+
+								<p class="prod-desc-heading-static" style="display:inline">Starch: </p>
+								<p class="prod-desc-text" style="display:inline">63%</p>
+								<br>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-7">
+						<div class="row row-centered">
+							<div class="col-md-5">
+								<!-- Star Ratings -->
+								<br>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star-half-o"></span>
+
+								<p class="prod-desc-heading-static">21 Reviews</p>
+								<br>
+
+								<p class="prod-desc-text-large-small">{{ name }}</p>
+								<p class="prod-desc-heading-static">
+									Pricing Rule 1
+									<br>
+									Pricing Rule 2
+									<br>
+									Pricing Rule 3
+									<br>
+								</p>
+							</div>
+
+							<div class="col-md-7 col-centered">
+								<div class="row row-centered">
+									<div class="col-md-12 col-centered">
+										<p class="prod-desc-heading-static">Quantity </p>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12 col-centered">
+										<div class="input-group number-spinner">
+											<span class="input-group-btn data-dwn">
+												<button class="btn btn-default btn-info" data-dir="dwn" data-name="quantity_down_btn">
+													<span class="glyphicon glyphicon-minus"></span>
+												</button>
+											</span>
+
+											<input type="text" class="form-control text-center" value="{{ quantity }}" min="{{ min_order }} {{ unit }}" max="{{ max_order }} {{ unit }}}" data-min="{{ min_order }}" data-max="{{ max_order }}" data-name="quantity_input">
+
+											<span class="input-group-btn data-up">
+												<button class="btn btn-default btn-info" data-dir="up" data-name="quantity_up_btn">
+													<span class="glyphicon glyphicon-plus"></span>
+												</button>
+											</span>
+										</div>
+									</div>
+								</div>
+								<br>
+
+								<div class="row row-centered">
+									<div class="col-md-12 col-centered">
+										<p class="prod-desc-heading-static">Total Price: </p>
+										<p class="prod-desc-text-large-small" data-name="total_price" data-price="{{ price }}"><span class="fa fa-inr"></span>{{ total_price }}</p>
+										<p class="prod-desc-heading-static">Prices include all taxes.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row row-centered">
+							<div class="col-md-12">
+								<p class="prod-desc-heading-static">This is a brief description of the SKU and how great it is, how great the vendor is and so on..</p>
+								<br>
+							</div>
+
+							<div class="col-md-12">
+								<button class="btn btn-lg btn-warning" {{ attributes_cart_btn }}><span class="fa fa-shopping-cart"></span> Add to Cart!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</template>

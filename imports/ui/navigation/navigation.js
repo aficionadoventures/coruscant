@@ -21,7 +21,3 @@ Template.navigation.events({
 		}
 	},
 });
-
-Template.navigation.helpers({
-	// TODO(hatim)
-});

@@ -1,65 +1,67 @@
 <template name="navigation">
 
-<div id="heading-breadcrumbs">
-	<div class="container">
-		<!-- First Row -->
-			<div class="row"> 
-				<div class="col-md-3">
-					<p class="prod-desc-text-larger">Aficionado</p>
-				</div>
-				<div class="col-md-3">
-					<span class="fa fa-map-marker"></span>
-					<p class="prod-desc-text" style="display:inline"> Current City: Gurgaon</p>
-				</div>
-				<div class="col-md-2">
-					<span class="fa fa-phone"></span>
-					<p class="prod-desc-text" style="display:inline"> Contact Us!</p>
-				</div> <!-- Needs Link -->
-				<div class="col-md-1">
-					<p class="prod-desc-text" style="display:inline"> FAQs  </p>
-				</div><!-- Needs Link -->
-				<div class="col-md-1">
-					<p class="prod-desc-text" style="display:inline"> Blog</p>
-				</div><!-- Needs Link -->
-				<div class="col-md-1">
-					<p class="prod-desc-text" style="display:inline"> Dashboard</p>
-				</div><!-- Needs Link -->
-				<div class="col-md-1">
-					<p class="prod-desc-text" style="display:inline"> Sign Out</p>
-				</div><!-- Needs Link -->
-			</div>
-		<!-- First Row Ends -->
-
-		<!-- Search Bar and My Cart button -->
-			<div class="row">
-				<!-- Search Bar -->
-				<div class="col-md-3">
-					<p class="header-invisible">Easter Egg from Rito and Hatim!</p>
-				</div>
-				<div class="col-md-6">
-					<form data-id="searchForm">
-						<div class="col-md-10">
-							<input id="searchInput" name="searchInput" type="text" placeholder="Search for Product" class="form-control input-md" />
-						</div>
-						<div class="col-md-2">
-							<button class="btn btn-lg btn-primary" name="searchButton" type="submit"><span class="fa fa-search"></span> Search</button>
-						</div>
-					</form>
-				</div>
-				<!-- Cart -->
-					<div class="col-md-1">
-						<p class="header-invisible"></p>
+<nav class="navbar navbar-default">
+	<div id="heading-breadcrumbs">
+		<div class="container">
+			<!-- First Row -->
+				<div class="row"> 
+					<div class="col-md-3">
+						<p class="prod-desc-text-larger">Aficionado</p>
 					</div>
-					<div class="col-md-2" id="cd-cart-trigger">
-						<a href="#" class="btn btn-lg btn-warning" data-toggle="modal" data-target="#modalCart"><span class="fa fa-shopping-cart"></span> My Cart</a> 
-					</div><!-- Static Cart -->
-			</div>
+					<div class="col-md-3">
+						<span class="fa fa-map-marker"></span>
+						<p class="prod-desc-text" style="display:inline"> Current City: Gurgaon</p>
+					</div>
+					<div class="col-md-2">
+						<span class="fa fa-phone"></span>
+						<p class="prod-desc-text" style="display:inline"> Contact Us!</p>
+					</div> <!-- Needs Link -->
+					<div class="col-md-1">
+						<p class="prod-desc-text" style="display:inline"> FAQs  </p>
+					</div><!-- Needs Link -->
+					<div class="col-md-1">
+						<p class="prod-desc-text" style="display:inline"> Blog</p>
+					</div><!-- Needs Link -->
+					<div class="col-md-1">
+						<p class="prod-desc-text" style="display:inline"> Dashboard</p>
+					</div><!-- Needs Link -->
+					<div class="col-md-1">
+						<p class="prod-desc-text" style="display:inline"> Sign Out</p>
+					</div><!-- Needs Link -->
+				</div>
+			<!-- First Row Ends -->
 
-		<div class="row">
-			<p class="header-invisible">Hatim and Rito say Hi.</p>
+			<!-- Search Bar and My Cart button -->
+				<div class="row">
+					<!-- Search Bar -->
+					<div class="col-md-3">
+						<p class="header-invisible">Easter Egg from Rito and Hatim!</p>
+					</div>
+					<div class="col-md-6">
+						<form data-id="searchForm">
+							<div class="col-md-10">
+								<input id="searchInput" name="searchInput" type="text" placeholder="Search for Product" class="form-control input-md" />
+							</div>
+							<div class="col-md-2">
+								<button class="btn btn-lg btn-primary" name="searchButton" type="submit"><span class="fa fa-search"></span> Search</button>
+							</div>
+						</form>
+					</div>
+					<!-- Cart -->
+						<div class="col-md-1">
+							<p class="header-invisible"></p>
+						</div>
+						<div class="col-md-2" id="cd-cart-trigger">
+							<a href="#" class="btn btn-lg btn-warning" data-toggle="modal" data-target="#modalCart"><span class="fa fa-shopping-cart"></span> My Cart</a> 
+						</div><!-- Static Cart -->
+				</div>
+
+			<div class="row">
+				<p class="header-invisible">Hatim and Rito say Hi.</p>
+			</div>
 		</div>
 	</div>
-</div>
+</nav>
 
 {{> cart}}
 
