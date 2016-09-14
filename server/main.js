@@ -3,7 +3,7 @@ import { Plivo } from 'meteor/pfafman:plivo';
 import { Accounts } from 'meteor/accounts-base';
 import { Random } from 'meteor/random';
 
-import { Products } from '../imports/api/userdata.js'
+import { Products } from '../imports/api/userdata.js';
 
 import '../imports/route/route.js';
 import '../imports/route/configure.js';
@@ -38,35 +38,71 @@ Meteor.methods({
 	},
 
 	'search_name' : function(query) {
-		results = [];
-		var name = '';
-		var split_sort_array = query.name.split(' ').sort();
-		for (i = 0; i < split_sort_array.length; i++) {
-			name = name + '"' + split_sort_array[i].trim() + '" ';
-		}
-		name = name.trim();
+		let array = Products.find({ $text : { $search: query } }).fetch();
+		let results = [];
+		for (let i = 0; i < array.length; i++) {
+			let tmp = {
+				_id : array[i]._id,
+				category : array[i].category,
+				brand : array[i].brand,
+				name : array[i].name,
+				packaging : array[i].packaging,
+				img : array[i].img,
+				price : Math.floor(array[i].price) + (Math.floor((array[i].price - Math.floor(array[i].price)) * 100) / 100),
+				vendor : Meteor.users.find({_id : array[i].vendor}).fetch()[0].name,
+				origin : Meteor.users.find({_id : array[i].vendor}).fetch()[0].location.city,
 
-		Products.find({ $text : { $search: name } }).forEach(function(doc) {
-			tmp = {
-				_id : doc._id,
-				category : doc.category,
-				brand : doc.brand,
-				name : doc.name,
-				packaging : doc.packaging,
-				img : doc.img,
-				price : Math.floor(doc.price) + (Math.floor((doc.price - Math.floor(doc.price)) * 100) / 100)
+				attributes_details_btn : {
+					'data-id' : array[i]._id,
+					'data-name' : 'details_btn',
+				},
 			};
 
-			Meteor.users.findOne({_id : doc.vendor}).forEach(function(other_doc) {
-				tmp.vendor = other_doc.name;
-				tmp.origin = other_doc.location.city;
-			});
-			
+			tmp.min_order = (array[i].min_order) ? array[i].min_order : 20;
+			tmp.max_order = (array[i].max_order) ? array[i].max_order : 200;
+			tmp.unit = (array[i].unit) ? array[i].unit : "kg";
+
 			results.push(tmp);
-		});
+		}
 
 		return results;
 	},
+
+	'add_to_cart' : function(cart_obj) {
+		if (Meteor.userId()) {
+			Meteor.users.update({ _id : Meteor.userId() }, { $push : { cart : cart_obj } });
+		} else {
+			console.log('Not logged in, falling to eoDZdGmqM2BMdQHZN...');
+			Meteor.users.update({ _id : 'eoDZdGmqM2BMdQHZN' }, { $push : { cart : cart_obj } });
+		}
+	},
+
+	'fetch_cart' : function() {
+		let tmp_cart = [];
+		if (Meteor.userId()) {
+			tmp_cart = Meteor.users.find({ _id : Meteor.userId() }).fetch()[0].cart;
+		} else {
+			console.log('Not logged in, falling to eoDZdGmqM2BMdQHZN...');
+			tmp_cart = Meteor.users.find({ _id : 'eoDZdGmqM2BMdQHZN' }).fetch()[0].cart;
+		}
+
+		let cart = [];
+		for (let i = 0; i < tmp_cart.length; i++) {
+			let tmp_sku = Products.find({ _id : tmp_cart[i]._id }).fetch()[0];
+			cart.push({
+				_id : tmp_sku._id,
+				name : tmp_sku.name,
+				img : tmp_sku.img,
+				price : Math.floor(tmp_sku.price) + (Math.floor((tmp_sku.price - Math.floor(tmp_sku.price)) * 100) / 100),
+				vendor : Meteor.users.find({_id : tmp_sku.vendor}).fetch()[0].name,
+				cart_quantity : tmp_cart[i].quantity,
+				unit : (tmp_sku.unit) ? tmp_sku.unit : "kg",
+				cart_total : (Math.floor(tmp_sku.price) + (Math.floor((tmp_sku.price - Math.floor(tmp_sku.price)) * 100) / 100)) * tmp_cart[i].quantity,
+			});
+		}
+
+		return cart;
+	}
 });
 
 Accounts.onCreateUser(function(options, user) {
