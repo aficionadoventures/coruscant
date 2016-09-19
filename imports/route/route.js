@@ -34,6 +34,13 @@ Router.route('/login', function () {
 	template : 'login',
 });
 
+Router.route('/catalogue', function () {
+	this.render('catalogue');
+}, {
+	name: 'catalogue',
+	template : 'catalogue',
+});
+
 let query = '';
 let results_route = [];
 let results_route_dep = new Tracker.Dependency;
