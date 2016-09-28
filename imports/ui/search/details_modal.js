@@ -7,7 +7,8 @@ import './details_modal.html';
 
 Template.details_modal.onCreated(function() {
 	Template.instance().quantity = new ReactiveVar(50);
-	Template.instance().total_price = new ReactiveVar(Math.floor(parseFloat($('[data-name="total_price"]').data('price')) * 50));
+	// Template.instance().total_price = new ReactiveVar(Math.floor(parseFloat($('[data-name="total_price"]').data('price')) * 50));
+	Template.instance().total_price = new ReactiveVar(Math.floor(parseFloat(52.22) * 50));
 });
 
 Template.details_modal.helpers({
